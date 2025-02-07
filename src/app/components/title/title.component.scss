@@ -1,0 +1,73 @@
+@import "assets/style/variables.scss";
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: $white-color;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+h1 {
+  font-size: 4rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 1) !important;
+}
+
+.tech-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 1rem;
+}
+
+.tech-logos #angular-logo {
+  width: 200px;
+  height: auto;
+}
+
+.tech-logo {
+  width: 75px;
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  .profile-pic {
+    width: 60px;
+    height: 60px;
+  }
+
+  .tech-logo {
+    width: 40px;
+  }
+
+  .tech-logos {
+    gap: 0.5rem;
+  }
+
+  .tech-logos #angular-logo {
+    width: 150px;
+  }
+}
