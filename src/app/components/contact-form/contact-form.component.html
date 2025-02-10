@@ -1,0 +1,58 @@
+<div class="contact-form-card">
+  <app-card [style]="'contact-card'">
+    <div *ngIf="!emailSent; else validationTemplate">
+      <h1><i class="fa-solid fa-envelope"></i>Contactez-moi</h1>
+      <form *ngIf="!isLoading; else loadingTemplate" [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="form-group">
+          <label for="name">Nom:</label>
+          <input type="text" formControlName="name" id="name" placeholder="Entrez votre nom" required
+                 [ngClass]="{'is-invalid': isInvalid('name')}">
+          <div *ngIf="isInvalid('name')" class="error">
+            Le nom est requis.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" formControlName="email" id="email" placeholder="Entrez votre email" required
+                 [ngClass]="{'is-invalid': isInvalid('email')}">
+          <div *ngIf="isInvalid('email')" class="error">
+            L'email est invalide.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea formControlName="message" id="message" rows="5" placeholder="Tapez votre message ici" required
+                    [ngClass]="{'is-invalid': isInvalid('message')}"></textarea>
+          <div *ngIf=" isInvalid('message')" class="error">
+            Un message est requis.
+          </div>
+        </div>
+
+        <button type="submit" [disabled]="contactForm.invalid">
+          Envoyer <i class="fa fa-paper-plane"></i>
+        </button>
+      </form>
+      <ng-template #loadingTemplate>
+        <div class="loading-message">
+          <div class="spinner"></div>
+          <p>Envoi en cours ...</p>
+        </div>
+      </ng-template>
+    </div>
+    <ng-template #validationTemplate>
+      <div class="validation-message">
+        <div class="success-checkmark">
+          <div class="check-icon">
+            <span class="icon-line line-tip"></span>
+            <span class="icon-line line-long"></span>
+            <div class="icon-circle"></div>
+            <div class="icon-fix"></div>
+          </div>
+        </div>
+        <p>Merci pour votre message. Je vous recontacte bientôt !</p>
+      </div>
+    </ng-template>
+  </app-card>
+</div>
