@@ -1,0 +1,18 @@
+{
+  "jobTitle": "Full-stack Developer",
+  "contact": {
+    "title": "Contact Me",
+    "name": "Name",
+    "nameRequired": "Name is required.",
+    "namePlaceholder": "Enter your name",
+    "email": "Email",
+    "invalidEmail": "Invalid email address.",
+    "emailPlaceholder": "Enter your email",
+    "message": "Message",
+    "messageRequired": "Message is required.",
+    "messagePlaceholder": "Type your message here",
+    "send": "Send",
+    "sending": "Sending ...",
+    "success": "Thank you for your message. We will contact you soon!"
+  }
+}

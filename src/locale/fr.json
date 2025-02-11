@@ -1,0 +1,18 @@
+{
+  "jobTitle": "Développeur Full-stack",
+  "contact": {
+    "title": "Contactez-moi",
+    "name": "Nom",
+    "nameRequired": "Le nom est requis.",
+    "namePlaceholder": "Entrez votre nom",
+    "email": "Email",
+    "invalidEmail": "L'email est invalide.",
+    "emailPlaceholder": "Entrez votre email",
+    "message": "Message",
+    "messageRequired": "Un message est requis.",
+    "messagePlaceholder": "Tapez votre message ici",
+    "send": "Envoyer",
+    "sending": "Envoi en cours ...",
+    "success": "Merci pour votre message. Nous vous contacterons bientôt !"
+  }
+}

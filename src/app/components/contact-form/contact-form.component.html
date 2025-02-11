@@ -1,43 +1,43 @@
 <div class="contact-form-card">
   <app-card [style]="'contact-card'">
     <div *ngIf="!emailSent; else validationTemplate">
-      <h1><i class="fa-solid fa-envelope"></i>Contactez-moi</h1>
+      <h1><i class="fa-solid fa-envelope"></i>{{ 'contact.title' | translate }}</h1>
       <form *ngIf="!isLoading; else loadingTemplate" [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
         <div class="form-group">
-          <label for="name">Nom:</label>
-          <input type="text" formControlName="name" id="name" placeholder="Entrez votre nom" required
+          <label for="name">{{ 'contact.name' | translate }}</label>
+          <input type="text" formControlName="name" id="name" placeholder="{{ 'contact.namePlaceholder' | translate }}" required
                  [ngClass]="{'is-invalid': isInvalid('name')}">
           <div *ngIf="isInvalid('name')" class="error">
-            Le nom est requis.
+            {{ 'contact.nameRequired' | translate }}
           </div>
         </div>
 
         <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" formControlName="email" id="email" placeholder="Entrez votre email" required
+          <label for="email">{{ 'contact.email' | translate }}</label>
+          <input type="email" formControlName="email" id="email" placeholder="{{ 'contact.emailPlaceholder' | translate }}" required
                  [ngClass]="{'is-invalid': isInvalid('email')}">
           <div *ngIf="isInvalid('email')" class="error">
-            L'email est invalide.
+            {{ 'contact.invalidEmail' | translate }}
           </div>
         </div>
 
         <div class="form-group">
-          <label for="message">Message:</label>
-          <textarea formControlName="message" id="message" rows="5" placeholder="Tapez votre message ici" required
+          <label for="message">{{ 'contact.message' | translate }}</label>
+          <textarea formControlName="message" id="message" rows="5" placeholder="{{ 'contact.messagePlaceholder' | translate }}" required
                     [ngClass]="{'is-invalid': isInvalid('message')}"></textarea>
           <div *ngIf=" isInvalid('message')" class="error">
-            Un message est requis.
+            {{ 'contact.messageRequired' | translate }}
           </div>
         </div>
 
         <button type="submit" [disabled]="contactForm.invalid">
-          Envoyer <i class="fa fa-paper-plane"></i>
+          {{ 'contact.send' | translate }} <i class="fa fa-paper-plane"></i>
         </button>
       </form>
       <ng-template #loadingTemplate>
         <div class="loading-message">
           <div class="spinner"></div>
-          <p>Envoi en cours ...</p>
+          <p>{{ 'contact.sending' | translate }}</p>
         </div>
       </ng-template>
     </div>
@@ -51,7 +51,7 @@
             <div class="icon-fix"></div>
           </div>
         </div>
-        <p>Merci pour votre message. Je vous recontacte bientôt !</p>
+        <p>{{ 'contact.success' | translate }}</p>
       </div>
     </ng-template>
   </app-card>

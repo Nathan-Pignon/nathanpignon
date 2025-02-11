@@ -4,6 +4,7 @@ import {CardComponent} from "../card/card.component";
 import {NgClass, NgIf, DOCUMENT} from "@angular/common";
 import {ContactService} from "../../services/contact.service";
 import {take} from "rxjs";
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact-form',
@@ -12,7 +13,8 @@ import {take} from "rxjs";
     CardComponent,
     ReactiveFormsModule,
     NgIf,
-    NgClass
+    NgClass,
+    TranslatePipe
   ],
   standalone: true,
   styleUrls: ['./contact-form.component.scss']
