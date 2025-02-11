@@ -49,6 +49,17 @@ h1 {
   height: auto;
 }
 
+.cv-container {
+  margin-top: 5vh;
+  display: flex;
+  gap: 1rem;
+}
+
+.cv-container a {
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
 @media screen and (max-width: 768px) {
   h1 {
     font-size: 3rem;
