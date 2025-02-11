@@ -20,7 +20,6 @@ export class HeaderComponent {
 
   protected switchLanguage(): void {
     this.currentLanguage = this.currentLanguage === 'fr' ? 'en' : 'fr';
-    console.log(this.currentLanguage);
     this.translate.use(this.currentLanguage);
   }
 

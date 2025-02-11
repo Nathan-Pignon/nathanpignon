@@ -58,3 +58,15 @@ body::before {
   height: auto;
 }
 
+@media screen and (max-width: 768px) {
+  .app-button {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+
+  .app-button img,
+  .app-button i {
+    width: 16px;
+  }
+}
+
