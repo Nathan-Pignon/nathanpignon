@@ -54,6 +54,27 @@ h1 {
   }
 }
 
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1vw;
+}
+
+.socials-medias-container {
+  display: flex;
+  justify-content: center;
+  gap: 1vw;
+}
+
+.socials-medias-container a {
+  text-decoration: none;
+  color: $white-color;
+}
+
+.socials-medias-container i {
+  font-size: 2rem;
+}
+
 button {
   padding: 10px 20px;
   background-color: $light-blue-color;
@@ -108,6 +129,10 @@ button {
   input[type="email"],
   textarea {
     width: 80vw;
+  }
+
+  .socials-medias-container {
+    gap: 5vw;
   }
 }
 
