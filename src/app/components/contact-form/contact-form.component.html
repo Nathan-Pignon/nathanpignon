@@ -30,9 +30,15 @@
           </div>
         </div>
 
-        <button type="submit" [disabled]="contactForm.invalid">
-          {{ 'contact.send' | translate }} <i class="fa fa-paper-plane"></i>
-        </button>
+        <div class="buttons-container">
+          <button type="submit" [disabled]="contactForm.invalid">
+            {{ 'contact.send' | translate }} <i class="fa fa-paper-plane"></i>
+          </button>
+          <div class="socials-medias-container">
+            <a href="https://github.com/Nathan-Pignon" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/nathan-pignon-b8b395199/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
       </form>
       <ng-template #loadingTemplate>
         <div class="loading-message">
