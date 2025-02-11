@@ -1,0 +1,11 @@
+<div class="header-container">
+  <div class="language-container">
+    <button type="button" class="app-button" (click)="switchLanguage()">
+      {{ currentLanguage === 'fr' ? 'Switch to English ' : 'Passer en Français' }}
+      <img [ngSrc]="getLanguageImagePath()"
+           [alt]="currentLanguage === 'fr' ? 'Drapeau anglais' : 'Drapeau français'"
+           width="20"
+           height="20">
+    </button>
+  </div>
+</div>
