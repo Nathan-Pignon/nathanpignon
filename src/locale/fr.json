@@ -15,5 +15,10 @@
     "send": "Envoyer",
     "sending": "Envoi en cours ...",
     "success": "Merci pour votre message. Nous vous contacterons bientôt !"
+  },
+  "projects": {
+    "personal": "Personnel",
+    "professional": "Professionnel",
+    "school": "Scolaire"
   }
 }

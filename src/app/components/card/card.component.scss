@@ -46,6 +46,45 @@
   text-align: right;
 }
 
+.projects-menu {
+  display: flex;
+  justify-content: center;
+  gap: 1vw;
+}
+
+.personal {
+  background: linear-gradient(to bottom, transparent, rgba($black-color, 0.5), rgba($black-color, 0.9)),
+  url("/assets/images/personal.png") no-repeat center center;
+  background-size: cover, cover;
+  position: relative;
+  filter: grayscale(100%);
+}
+
+.school {
+  background: linear-gradient(to bottom, transparent, rgba($black-color, 0.5), rgba($black-color, 0.9)),
+  url("/assets/images/school.jpg") no-repeat center center;
+  background-size: cover, cover;
+  filter: grayscale(100%);
+}
+
+.professional {
+  background: linear-gradient(to bottom, transparent, rgba($black-color, 0.5), rgba($black-color, 0.9)),
+  url("/assets/images/professional.png") no-repeat center center;
+  background-size: cover, cover;
+  filter: grayscale(100%);
+}
+
+.personal:hover,
+.school:hover,
+.professional:hover {
+  filter: grayscale(0%);
+  cursor: pointer;
+}
+
+.project-menu-selected {
+  filter: grayscale(0%);
+}
+
 @media (max-width: 768px) {
   .card {
     margin: 2vh auto;

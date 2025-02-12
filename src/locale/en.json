@@ -15,5 +15,10 @@
     "send": "Send",
     "sending": "Sending ...",
     "success": "Thank you for your message. We will contact you soon!"
+  },
+  "projects": {
+    "personal": "Personal",
+    "professional": "Professional",
+    "school": "School"
   }
 }

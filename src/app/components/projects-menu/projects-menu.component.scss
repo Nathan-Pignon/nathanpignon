@@ -1,0 +1,29 @@
+.menu-container {
+  position: relative;
+  z-index: 1;
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+  gap: 2vw;
+  margin-left: 15vw;
+  margin-right: 15vw;
+}
+
+.menu h3 {
+  text-align: center;
+  font-size: 3rem;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
+  .menu h3 {
+    font-size: 1rem;
+  }
+}
+

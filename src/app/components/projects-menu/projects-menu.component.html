@@ -1,0 +1,9 @@
+<div class="menu-container">
+  <div class="menu">
+    <div class="menu-item" *ngFor="let projectType of projectTypes" trackBy="project.name">
+      <app-card [style]="projectType.type+' projects-menu '+projectTypeIsSelected(projectType.type)" (click)="selectProjectType(projectType.type)">
+        <h3>{{ projectType.name }}</h3>
+      </app-card>
+    </div>
+  </div>
+</div>
