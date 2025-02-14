@@ -1,10 +1,11 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NgForOf} from '@angular/common';
 import {CardComponent} from '../card/card.component';
 import {ProjectTypeModel} from '../../models/project-type.model';
 import {ProjectTypeEnum} from '../../enums/project-type.enum';
 import {TranslateService} from '@ngx-translate/core';
 import {Subscription} from 'rxjs';
+import {ProjectsService} from '../../services/projects.service';
 
 @Component({
   selector: 'app-projects-menu',
@@ -14,16 +15,20 @@ import {Subscription} from 'rxjs';
     CardComponent
   ],
   templateUrl: './projects-menu.component.html',
-  styleUrl: './projects-menu.component.scss'
+  styleUrl: './projects-menu.component.scss',
 })
-export class ProjectsMenuComponent {
+export class ProjectsMenuComponent implements OnInit {
   protected projectTypes: ProjectTypeModel[] = [];
   protected selectedProjectType: ProjectTypeEnum = ProjectTypeEnum.PERSONAL;
   private translationSubscription!: Subscription;
 
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService,
+              private projectsService: ProjectsService) {
+  }
+
+  ngOnInit() {
     this.translationSubscription = this.translate
-      .stream('projects.personal')
+      .stream('projects.personal.title')
       .subscribe((translation: string) => {
         this.onTranslationUpdate();
       });
@@ -31,9 +36,9 @@ export class ProjectsMenuComponent {
 
   protected onTranslationUpdate(): void {
     this.projectTypes = [
-      {name: this.translate.instant('projects.personal'), type: ProjectTypeEnum.PERSONAL},
-      {name: this.translate.instant('projects.school'), type: ProjectTypeEnum.SCHOOL},
-      {name: this.translate.instant('projects.professional'), type: ProjectTypeEnum.PROFESSIONAL}
+      {name: this.translate.instant('projects.personal.title'), type: ProjectTypeEnum.PERSONAL},
+      {name: this.translate.instant('projects.school.title'), type: ProjectTypeEnum.SCHOOL},
+      {name: this.translate.instant('projects.professional.title'), type: ProjectTypeEnum.PROFESSIONAL}
     ];
   }
 
@@ -42,6 +47,7 @@ export class ProjectsMenuComponent {
   }
 
   protected selectProjectType(projectType: ProjectTypeEnum): void {
+    this.projectsService.changeProjectType(projectType);
     this.selectedProjectType = projectType;
   }
 

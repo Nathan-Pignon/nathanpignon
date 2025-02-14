@@ -17,8 +17,53 @@
     "success": "Merci pour votre message. Nous vous contacterons bientôt !"
   },
   "projects": {
-    "personal": "Personnel",
-    "professional": "Professionnel",
-    "school": "Scolaire"
+    "github": " Voir le repo github",
+    "ios": " Voir sur l'App Store",
+    "android": " Voir sur le Play Store",
+    "personal": {
+      "title": "Personnel",
+      "boursia": {
+        "title": "BoursIA",
+        "description": "📱 BoursIA est une application mobile (iOS) permettant d'analyser les entreprises cotées en Bourse grâce à l'intelligence artificielle ainsi qu'aux données financières et médiatiques récoltées en temps réel.\n Ce projet m'a permis de concevoir et développer chaques parties de l'application, du choix des technologies au déploiement sur serveur et App Store.\n\n🛠️ Technologies et pratiques utilisées :\n✅ Front-end : Développement cross-platform en Flutter.\n✅ Back-end : Architecture en microservices Java Spring Boot.\n✅ Sécurité : Implémentation de Spring Security pour la gestion des authentifications et autorisations.\n✅ API & Données : Intégration de multiples APIs externes (marchés financiers, données économiques, actualités boursières et géopolitiques).\n✅ Déploiement & DevOps : Hébergement sur serveur via Docker, automatisation CI/CD pour des mises à jour continues."
+      },
+      "portfolio": {
+        "title": "Portfolio",
+        "description": "📜 Mon portfolio est le projet sur lequel vous êtes actuellement, c'est un site web qui a été conçu pour mettre en avant mes réalisations et compétences. Grâce à ce projet, j'ai pu concevoir et développer une interface moderne et responsive en Angular, tout en intégrant un back-end en FastAPI dédié à la gestion des contacts.\n\n🛠️ Technologies et pratiques utilisées :\n✅ Front-end : Développement d'une interface interactive et responsive avec Angular.\n✅ Back-end : Mise en place d'un service de contact avec FastAPI.\n✅ Déploiement & DevOps : Containerisation et déploiement sur serveur via Docker."
+      }
+    },
+    "professional": {
+      "title": "Professionnel",
+      "sopraSteria": {
+        "title": "Sopra Steria",
+        "description": "🚅 Sopra Steria a été une expérience passionnante où j'ai contribué au développement de nouvelles fonctionnalités pour les applications de supervision des trains de la SNCF. Ce projet m'a permis d'intervenir sur l'ensemble du cycle de développement, depuis la migration des systèmes back-end jusqu'à la refonte et l'optimisation des interfaces utilisateur, en passant par l'ajout de nouvelles fonctionnalités et la correction d'anomalies.\nLors de ces deux années, j'ai pu acquérir énormément d'expériences et de compétences sur le plan technique.\n\n🛠️ Technologies et pratiques utilisées :\n✅ Back-end : Développement et migration en Java avec Spring Boot, avec passage de la version 2.7 à la 3.2.\n✅ Front-end : Refonte des interfaces d'AngularJS vers Angular 15, incluant des optimisations (lazy loading, stratégie OnPush, utilisation de trackBy et prévention des fuites mémoires).\n✅ Tests : Mise en place de tests unitaires pour garantir la qualité du code.\n✅ Base de données : Élaboration de scripts SQL pour la mise à jour des bases de données PostgreSQL.\n✅ DevOps : Automatisation des déploiements et livraisons en CI/CD grâce à Ansible et Jenkins.\n✅ Méthodologie Agile : Travail collaboratif dans un environnement agile (daily scrums, rétrospectives, découpage des user stories, poker planning)."
+      },
+      "millet": {
+        "title": "Groupe Millet",
+        "description": "🪟 Groupe Millet a marqué mon entrée dans le monde professionnel. Pendant ces deux années, j'ai conçu et développé des solutions logicielles sur mesure pour répondre aux besoins internes. J'ai pu intervenir sur divers projets, allant du développement d'applications desktop en Windev à la création d'applications mobiles Android avec Windev Mobile, intégrant des fonctionnalités avancées telles que le flash de code barre/QR code, la géolocalisation, l'attribution de quais par notifications pour les chauffeurs, la gestions de LEDs, vérification de poids à l'aide d'une balance et bien d'autres.\n\n🛠️ Technologies et pratiques utilisées :\n✅ Environnement de développement : Conception d'applications avec Windev et Windev Mobile pour répondre à des besoins internes spécifiques.\n✅ Intégration matérielle : Gestion de dispositifs (Arduino, balance, caméra).\n✅ Analyse et conception : Analyse des besoins, étude de faisabilité et développement de solutions sur mesure."
+      }
+    },
+    "school": {
+      "title": "Scolaire",
+      "fettuccini": {
+        "title": "Fettuccini",
+        "description": "♠\uFE0F Fettuccini est un projet collaboratif réalisé par une équipe de plus de 10 personnes en méthodologie agile. L'objectif est d'assister le croupier dans ses tâches récurrentes et chronophages pendant les parties. Pour cela, les cartes et les jetons sont équipés de tags NFC, lus par des lecteurs placés sous la table, tandis que des LEDs installées sur le bord de la table fournissent des informations en temps réel (tour de jeu, actions des joueurs, etc.). Une interface sur tablette est dédiée au croupier, affichant une représentation de la table, le calcul des mises et du pot, les informations sur le niveau actuel, les blinds, le stack effectif de chaque joueur, ainsi que la répartition des jetons en cas d'égalité pour déterminer le ou les gagnants de chaque main.\n\n \uD83D\uDEE0\uFE0F Technologies et pratiques utilisées : \n✅ Back-end : Java Spring Boot\n✅ Front-end : React\n✅ Base de données : MongoDB\n✅ Méthodologie agile \n✅ Intégration hardware pour automatiser la lecture des cartes et jetons"
+      },
+      "web800": {
+        "title": "T-WEB-800",
+        "description": "\uD83D\uDDFA\uFE0F T-WEB-800 est une application de voyage permettant aux utilisateurs de planifier leurs voyages en sélectionnant des villes et en créant leur itinéraire. De plus, le site fournit des informations détaillées sur les activités locales, événements, bars, restaurants, hébergements et activités sportives aux alentours des villes choisies. Ce projet a été réalisé en TDD (Test Driven Development).\n\n \uD83D\uDEE0\uFE0F Technologies et pratiques utilisées :\n✅ Back-end: Spring Boot (Java 17) microservices\n✅ Front-end: Angular\n✅ Base de données: MySQL\n✅ Intégration d'APIs externes (Google Maps, Amadeus)\n✅ TDD (Test Driven Development) pour garantir la qualité du code"
+      },
+      "dev700": {
+        "title": "T-DEV-700",
+        "description": "\uD83D\uDED2 T-DEV-700 est une solution de gestion de boutique, prenant en charge le traitement des commandes, la gestion des transactions et le suivi de l'inventaire. L'application se compose d'un serveur central et de deux clients mobiles, une application 'shop' destiné aux employés afin de consulter l'inventaire et initierle processus de paiement via websocket et un terminal de paiement qui permet d'effectuer la transaction via lecture (NFC) d'une carte bancaire.\n\n \uD83D\uDEE0\uFE0F Technologies et pratiques utilisées :\n✅ Back-end : Java, Spring Boot, MariaDB, Redis, Mailhog\n✅ Mobile : Flutter pour l'application boutique et le terminal de paiement\n✅ Communication : Websockets pour synchroniser les transactions en temps réel"
+      },
+      "dat901": {
+        "title": "T-DAT-901",
+        "description": "📊 Ce projet avait pour objectif d'analyser en temps réel le cours de certaines cryptomonnaies, pour cela nous avons utilisé Apache Spark. Un scrapper récupérait les données et les envoyait directement dans un topic Kafka. Ce topic servait ensuite de source pour Apache Spark, qui lisait les données en continu pour les analyser et stocker les résultats dans InfluxDB pour leur visualisation via Grafana.\n\n\uD83D\uDEE0\uFE0F Technologies et pratiques utilisées :\n✅ Traitement : Analyse en temps réel avec Apache Spark.\n✅ Streaming : Transmission des données via Kafka.\n✅ Stockage : Enregistrement des résultats dans InfluxDB.\n✅ Visualisation : Tableaux de bord interactifs avec Grafana."
+      },
+      "dev810": {
+        "title": "T-DEV-810",
+        "description": "\uD83E\uDE7A L'objectif de ce projet était de détecter la pneumonie chez des patients à partir de radios des poumons. C'était notre premier projet en IA, nous avons utilisé un réseau de neurones convolutionnel (CNN) pour classifier les images. Nous avons entraîné notre modèle sur un jeu de données de radiographies de poumons annotées, puis nous avons testé sa précision sur un jeu de données de test.\n\n🛠️ Technologies et pratiques utilisées :\n✅ IA : Utilisation d'un réseau de neurones convolutionnel (CNN) pour la classification d'images.\n✅ Entraînement : Apprentissage supervisé sur un jeu de données annotées.\n✅ Test : Validation de la précision du modèle sur un jeu de données de test.\n✅ Notebooks pour expérimenter et affiner nos modèles"
+      }
+    }
   }
 }

@@ -14,15 +14,9 @@ import {ProjectsComponent} from './components/projects/projects.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  protected currentLanguage: string = 'fr';
 
   constructor(private translate: TranslateService) {
     this.translate.setDefaultLang('fr');
     this.translate.use('fr');
-  }
-
-  protected switchLanguage(): void {
-    this.currentLanguage = this.currentLanguage === 'fr' ? 'en' : 'fr';
-    this.translate.use(this.currentLanguage);
   }
 }

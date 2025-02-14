@@ -1,24 +1,69 @@
 {
   "jobTitle": "Full-stack Developer",
-  "download": "Download my CV",
+  "download": "Download my resume",
   "contact": {
-    "title": "Contact Me",
+    "title": "Contact me",
     "name": "Name",
     "nameRequired": "Name is required.",
     "namePlaceholder": "Enter your name",
     "email": "Email",
-    "invalidEmail": "Invalid email address.",
+    "invalidEmail": "The email is invalid.",
     "emailPlaceholder": "Enter your email",
     "message": "Message",
-    "messageRequired": "Message is required.",
+    "messageRequired": "A message is required.",
     "messagePlaceholder": "Type your message here",
     "send": "Send",
-    "sending": "Sending ...",
+    "sending": "Sending...",
     "success": "Thank you for your message. We will contact you soon!"
   },
   "projects": {
-    "personal": "Personal",
-    "professional": "Professional",
-    "school": "School"
+    "github": " View the GitHub repo",
+    "ios": " View on the App Store",
+    "android": " View on the Play Store",
+    "personal": {
+      "title": "Personal",
+      "boursia": {
+        "title": "BoursIA",
+        "description": "📱 BoursIA is a mobile (iOS) application that allows you to analyze publicly traded companies using artificial intelligence as well as real-time financial and media data. This project allowed me to design and develop every part of the application, from choosing the technologies to deploying it on a server and the App Store.\n\n🛠️ Technologies and practices used:\n✅ Front-end: Cross-platform development in Flutter.\n✅ Back-end: Microservices architecture with Java Spring Boot.\n✅ Security: Implementation of Spring Security for managing authentication and authorization.\n✅ API & Data: Integration of multiple external APIs (financial markets, economic data, stock market and geopolitical news).\n✅ Deployment & DevOps: Server hosting via Docker, CI/CD automation for continuous updates."
+      },
+      "portfolio": {
+        "title": "Portfolio",
+        "description": "📜 My portfolio is the project you are currently viewing. It is a website designed to showcase my achievements and skills. Through this project, I was able to design and develop a modern and responsive interface in Angular, while integrating a FastAPI back-end dedicated to contact management.\n\n🛠️ Technologies and practices used:\n✅ Front-end: Development of an interactive and responsive interface with Angular.\n✅ Back-end: Setup of a contact service with FastAPI.\n✅ Deployment & DevOps: Containerization and server deployment via Docker."
+      }
+    },
+    "professional": {
+      "title": "Professional",
+      "sopraSteria": {
+        "title": "Sopra Steria",
+        "description": "🚅 Sopra Steria was an exciting experience where I contributed to developing new features for SNCF's train supervision applications. This project allowed me to work on the entire development cycle, from migrating back-end systems to redesigning and optimizing user interfaces, as well as adding new functionalities and fixing bugs.\nOver these two years, I gained a wealth of technical experience and skills.\n\n🛠️ Technologies and practices used:\n✅ Back-end: Development and migration in Java with Spring Boot, upgrading from version 2.7 to 3.2.\n✅ Front-end: Redesign of interfaces from AngularJS to Angular 15, including optimizations (lazy loading, OnPush strategy, use of trackBy, and prevention of memory leaks).\n✅ Testing: Implementation of unit tests to ensure code quality.\n✅ Database: Development of SQL scripts for updating PostgreSQL databases.\n✅ DevOps: Automation of deployments and deliveries in CI/CD using Ansible and Jenkins.\n✅ Agile Methodology: Collaborative work in an agile environment (daily scrums, retrospectives, user story breakdown, poker planning)."
+      },
+      "millet": {
+        "title": "Groupe Millet",
+        "description": "🪟 Groupe Millet marked my entry into the professional world. During these two years, I designed and developed custom software solutions to meet internal needs. I worked on various projects, from developing desktop applications in Windev to creating Android mobile applications with Windev Mobile, incorporating advanced features such as barcode/QR code scanning, geolocation, dock assignment via notifications for drivers, LED management, weight verification using a scale, and more.\n\n🛠️ Technologies and practices used:\n✅ Development Environment: Designing applications with Windev and Windev Mobile to meet specific internal needs.\n✅ Hardware Integration: Management of devices (Arduino, scale, camera).\n✅ Analysis and Design: Requirements analysis, feasibility studies, and development of custom solutions."
+      }
+    },
+    "school": {
+      "title": "School",
+      "fettuccini": {
+        "title": "Fettuccini",
+        "description": "♠️ Fettuccini is a collaborative project carried out by a team of over 10 people using agile methodology. The objective is to assist the dealer with his recurrent and time-consuming tasks during games. For this purpose, the cards and chips are equipped with NFC tags, read by readers placed under the table, while LEDs installed around the table provide real-time information (whose turn it is, players' actions, etc.). A tablet interface is dedicated to the dealer, displaying a representation of the table, calculation of bets and the pot, information about the current level, blinds, each player's effective stack, as well as chip distribution in the event of a tie to determine the winner(s) of each hand.\n\n🛠️ Technologies and practices used:\n✅ Back-end: Java Spring Boot\n✅ Front-end: React\n✅ Database: MongoDB\n✅ Agile methodology\n✅ Hardware integration to automate the reading of cards and chips"
+      },
+      "web800": {
+        "title": "T-WEB-800",
+        "description": "🗺️ T-WEB-800 is a travel application that allows users to plan their trips by selecting cities and creating their itinerary. In addition, the site provides detailed information about local activities, events, bars, restaurants, accommodations, and sports activities around the selected cities. This project was developed using TDD (Test Driven Development).\n\n🛠️ Technologies and practices used:\n✅ Back-end: Spring Boot (Java 17) microservices\n✅ Front-end: Angular\n✅ Database: MySQL\n✅ Integration of external APIs (Google Maps, Amadeus)\n✅ TDD (Test Driven Development) to ensure code quality"
+      },
+      "dev700": {
+        "title": "T-DEV-700",
+        "description": "🛒 T-DEV-700 is a shop management solution that handles order processing, transaction management, and inventory tracking. The application consists of a central server and two mobile clients: a 'shop' application intended for employees to view inventory and initiate the payment process via websockets, and a payment terminal that processes transactions by reading (via NFC) a bank card.\n\n🛠️ Technologies and practices used:\n✅ Back-end: Java, Spring Boot, MariaDB, Redis, Mailhog\n✅ Mobile: Flutter for the shop application and the payment terminal\n✅ Communication: Websockets to synchronize transactions in real time"
+      },
+      "dat901": {
+        "title": "T-DAT-901",
+        "description": "📊 This project aimed to analyze in real time the value of certain cryptocurrencies, and for this, we used Apache Spark. A scraper collected the data and sent it directly to a Kafka topic. This topic then served as a source for Apache Spark, which continuously read the data to analyze it and store the results in InfluxDB for visualization via Grafana.\n\n🛠️ Technologies and practices used:\n✅ Processing: Real-time analysis with Apache Spark.\n✅ Streaming: Data transmission via Kafka.\n✅ Storage: Storing the results in InfluxDB.\n✅ Visualization: Interactive dashboards with Grafana."
+      },
+      "dev810": {
+        "title": "T-DEV-810",
+        "description": "\uD83E\uDE7A The objective of this project was to detect pneumonia in patients using lung X-rays. It was our first AI project; we used a convolutional neural network (CNN) to classify the images. We trained our model on a dataset of annotated lung X-rays and then tested its accuracy on a test dataset.\n\n🛠️ Technologies and practices used:\n✅ AI: Use of a convolutional neural network (CNN) for image classification.\n✅ Training: Supervised learning on an annotated dataset.\n✅ Testing: Validation of the model's accuracy on a test dataset.\n✅ Notebooks to experiment and refine our models"
+      }
+    }
   }
 }
