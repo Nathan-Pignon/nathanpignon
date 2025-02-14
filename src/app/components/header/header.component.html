@@ -8,4 +8,14 @@
            height="20">
     </button>
   </div>
+  <div class="menu-container">
+    <button type="button" class="app-button" (click)="scrollToElement('projects-menu')">
+      {{ 'seeProjects' | translate }}
+      <img src="assets/images/project-icon.png" alt="Projects icon">
+    </button>
+    <button type="button" class="app-button" (click)="scrollToElement('contact')">
+      {{ 'contact.title' | translate }}
+      <i class="fa fa-envelope"></i>
+    </button>
+  </div>
 </div>

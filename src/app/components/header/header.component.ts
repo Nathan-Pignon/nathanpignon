@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import {TranslateService} from '@ngx-translate/core';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 import {NgOptimizedImage} from '@angular/common';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [
-    NgOptimizedImage
+    NgOptimizedImage,
+    TranslatePipe
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
@@ -25,6 +26,13 @@ export class HeaderComponent {
 
   protected getLanguageImagePath(): string {
     return this.currentLanguage === 'fr' ? 'assets/images/us.png' : 'assets/images/fr.png';
+  }
+
+  protected scrollToElement(elementId: string): void {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({behavior: 'smooth'});
+    }
   }
 
 }

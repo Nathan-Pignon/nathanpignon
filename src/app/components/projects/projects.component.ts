@@ -44,8 +44,4 @@ export class ProjectsComponent implements OnInit {
     return index % 2 === 0 ? 'app-card-content' : 'app-card-content-reverse';
   }
 
-  onProjectClick(project: ProjectModel) {
-    console.log(project);
-  }
-
 }
