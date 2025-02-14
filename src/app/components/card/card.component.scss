@@ -98,4 +98,18 @@
     margin: 2vh auto;
     height: 35vh;
   }
+
+  .project-card-container,
+  .project-card-container-reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .projects-menu {
+    display: none;
+  }
+
+  .project-menu-selected {
+    display: flex;
+  }
 }

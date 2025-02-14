@@ -51,4 +51,22 @@ export class ProjectsMenuComponent implements OnInit {
     this.selectedProjectType = projectType;
   }
 
+  protected previousProjectType(): void {
+    const currentIndex = this.projectTypes.findIndex(pt => pt.type === this.selectedProjectType);
+    const newIndex = (currentIndex - 1 + this.projectTypes.length) % this.projectTypes.length;
+    const newType = this.projectTypes[newIndex].type;
+    this.selectProjectType(newType);
+  }
+
+  protected nextProjectType(): void {
+    const currentIndex = this.projectTypes.findIndex(pt => pt.type === this.selectedProjectType);
+    const newIndex = (currentIndex + 1) % this.projectTypes.length;
+    const newType = this.projectTypes[newIndex].type;
+    this.selectProjectType(newType);
+  }
+
+  protected projectIsHidden(projectType: ProjectTypeEnum): boolean {
+    return this.selectedProjectType !== projectType;
+  }
+
 }

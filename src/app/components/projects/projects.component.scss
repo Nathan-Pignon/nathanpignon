@@ -81,19 +81,40 @@
 
 @media (max-width: 768px) {
   .image-container {
-    flex: 0 0 30%;
+    flex: none;
+    width: 100%;
     padding: 1vw;
+    text-align: center;
     img {
-      width: 15vw;
+      width: 25vw;
+      height: auto;
+      margin-top: 1vh;
     }
   }
 
   .line {
-    height: 0;
+    display: none;
   }
 
   .text-container {
-    flex: 0 0 60%;
+    flex: none;
+    width: 100%;
     padding: 10px;
+
+    h2 {
+      margin-top: 0;
+    }
+    p {
+      font-size: 0.9em;
+      line-height: 1.4;
+      margin-top: 2.5vh;
+      margin-left: 3vw;
+      margin-right: 3vw;
+    }
+  }
+
+  .project-card-container,
+  .project-card-container-reverse {
+    flex-direction: column;
   }
 }
