@@ -1,4 +1,4 @@
-<div class="contact-form-card">
+<div class="contact-form-card" id="contact">
   <app-card [style]="'contact-card'">
     <div *ngIf="!emailSent; else validationTemplate">
       <h1><i class="fa-solid fa-envelope"></i>{{ 'contact.title' | translate }}</h1>

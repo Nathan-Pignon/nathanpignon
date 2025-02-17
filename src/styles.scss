@@ -2,7 +2,7 @@
 @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css';
 body {
   margin: 0;
-  background: url("assets/images/fond4.jpg") no-repeat center center fixed;
+  background: url("assets/images/background.jpg") no-repeat center center fixed;
   background-size: cover;
   position: relative;
 }
@@ -56,6 +56,14 @@ body::before {
   margin-left: 8px;
   width: 20px;
   height: auto;
+}
+
+.app-button-no-border {
+  border: none;
+}
+
+.app-button-no-border:hover {
+  box-shadow: none;
 }
 
 @media screen and (max-width: 768px) {

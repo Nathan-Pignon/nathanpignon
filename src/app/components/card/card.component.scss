@@ -30,20 +30,61 @@
   box-shadow: 0 0.4vw 0.6vw rgba(0, 0, 0, 0.5), inset 0 0 1vw rgba(255, 255, 255, 0.2);
 }
 
-.process-step {
+.project-card-container {
   display: flex;
   align-items: center;
   margin-bottom: 40px;
+  padding: 0 !important;
   box-shadow: 0 0.4vw 0.6vw rgba(0, 0, 0, 0.5), inset 0 0 1vw rgba(255, 255, 255, 0.2);
 }
 
-.process-step-reverse {
+.project-card-container-reverse {
   display: flex;
   align-items: center;
   margin-bottom: 40px;
+  padding: 0 !important;
   box-shadow: 0 0.4vw 0.6vw rgba(0, 0, 0, 0.5), inset 0 0 1vw rgba(255, 255, 255, 0.2);
   flex-direction: row-reverse;
   text-align: right;
+}
+
+.projects-menu {
+  display: flex;
+  justify-content: center;
+  gap: 1vw;
+}
+
+.personal {
+  background: linear-gradient(to bottom, transparent, rgba($black-color, 0.5), rgba($black-color, 0.9)),
+  url("/assets/images/personal.png") no-repeat center center;
+  background-size: cover, cover;
+  position: relative;
+  filter: grayscale(100%);
+}
+
+.school {
+  background: linear-gradient(to bottom, transparent, rgba($black-color, 0.5), rgba($black-color, 0.9)),
+  url("/assets/images/school.jpg") no-repeat center center;
+  background-size: cover, cover;
+  filter: grayscale(100%);
+}
+
+.professional {
+  background: linear-gradient(to bottom, transparent, rgba($black-color, 0.5), rgba($black-color, 0.9)),
+  url("/assets/images/professional.png") no-repeat center center;
+  background-size: cover, cover;
+  filter: grayscale(100%);
+}
+
+.personal:hover,
+.school:hover,
+.professional:hover {
+  filter: grayscale(0%);
+  cursor: pointer;
+}
+
+.project-menu-selected {
+  filter: grayscale(0%);
 }
 
 @media (max-width: 768px) {
@@ -56,5 +97,19 @@
     max-width: 90%;
     margin: 2vh auto;
     height: 35vh;
+  }
+
+  .project-card-container,
+  .project-card-container-reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .projects-menu {
+    display: none;
+  }
+
+  .project-menu-selected {
+    display: flex;
   }
 }

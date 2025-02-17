@@ -1,0 +1,20 @@
+<div class="projects-container">
+  <app-projects-menu></app-projects-menu>
+  <app-card class="{{isNormalCardOrReverseCard(i)}}" *ngFor="let project of projects; let i = index" [style]="isNormalClassOrReverseClass(i)">
+    <div class="image-container">
+      <img ngSrc="{{project.image}}" width="20" height="20" alt="Step icon">
+    </div>
+    <div class="line"></div>
+    <div class="text-container">
+      <div class="project-header-container {{isNormalClassOrReverseClass(i)}}">
+        <h2>{{ project.name }}</h2>
+        <div class="project-buttons-container {{isNormalClassOrReverseClass(i)}}">
+          <a *ngIf="project.github" href="{{ project.github }}" class="app-button" target="_blank"><i class="fa-brands fa-github"></i>{{ 'projects.github' | translate }}</a>
+          <a *ngIf="project.ios" href="{{ project.ios }}" class="app-button" target="_blank"><i class="fa-brands fa-apple"></i>{{ 'projects.ios' | translate }}</a>
+          <a *ngIf="project.android" href="{{ project.android }}" class="app-button" target="_blank"><i class="fa-brands fa-android"></i>{{ 'projects.android' | translate }}</a>
+        </div>
+      </div>
+      <p class="project-description">{{ project.description }}</p>
+    </div>
+  </app-card>
+</div>
