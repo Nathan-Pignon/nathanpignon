@@ -13,7 +13,6 @@ export class ContactService {
   public sendMail(body: ContactModel): Observable<string> {
     return this.http.post<string>(`${environmentProd.apiURL}/send-email`, body).pipe(
       catchError(err => {
-        console.error(err);
         return throwError(err);
       }));
   }

@@ -1,21 +1,50 @@
 <div class="header-container">
-  <div class="language-container">
-    <button type="button" class="app-button" (click)="switchLanguage()">
-      {{ currentLanguage === 'fr' ? 'Switch to English ' : 'Passer en Français' }}
-      <img [ngSrc]="getLanguageImagePath()"
-           [alt]="currentLanguage === 'fr' ? 'Drapeau anglais' : 'Drapeau français'"
-           width="20"
-           height="20">
-    </button>
-  </div>
-  <div class="menu-container">
-    <button type="button" class="app-button" (click)="scrollToElement('projects-menu')">
-      {{ 'seeProjects' | translate }}
-      <img src="assets/images/project-icon.png" alt="Projects icon">
-    </button>
-    <button type="button" class="app-button" (click)="scrollToElement('contact')">
-      {{ 'contact.title' | translate }}
-      <i class="fa fa-envelope"></i>
-    </button>
-  </div>
+  <ng-container *ngIf="isMobileView; else desktopTemplate">
+    <div class="hamburger-menu-container">
+      <div class="hamburger-container" (click)="toggleMenu()">
+        <i class="fa fa-bars"></i>
+      </div>
+      <ng-container *ngIf="menuOpen">
+        <div class="mobile-menu">
+          <button type="button" class="app-button" (click)="switchLanguage()">
+            {{ currentLanguage === 'fr' ? 'Switch to English' : 'Passer en Français' }}
+            <img [ngSrc]="getLanguageImagePath()"
+                 [alt]="currentLanguage === 'fr' ? 'Drapeau anglais' : 'Drapeau français'"
+                 width="20"
+                 height="20">
+          </button>
+          <button type="button" class="app-button app-button-no-border" (click)="scrollToElement('projects-menu')">
+            {{ 'seeProjects' | translate }}
+            <img ngSrc="assets/images/project-icon.png" alt="Projects icon" height="512" width="512">
+          </button>
+          <button type="button" class="app-button app-button-no-border" (click)="scrollToElement('contact')">
+            {{ 'contact.title' | translate }}
+            <i class="fa fa-envelope"></i>
+          </button>
+        </div>
+      </ng-container>
+    </div>
+  </ng-container>
+
+  <ng-template #desktopTemplate>
+    <div class="language-container">
+      <button type="button" class="app-button" (click)="switchLanguage()">
+        {{ currentLanguage === 'fr' ? 'Switch to English' : 'Passer en Français' }}
+        <img [ngSrc]="getLanguageImagePath()"
+             [alt]="currentLanguage === 'fr' ? 'Drapeau anglais' : 'Drapeau français'"
+             width="20"
+             height="20">
+      </button>
+    </div>
+    <div class="menu-container">
+      <button type="button" class="app-button app-button-no-border" (click)="scrollToElement('projects-menu')">
+        {{ 'seeProjects' | translate }}
+        <img ngSrc="assets/images/project-icon.png" alt="Projects icon" height="512" width="512">
+      </button>
+      <button type="button" class="app-button app-button-no-border" (click)="scrollToElement('contact')">
+        {{ 'contact.title' | translate }}
+        <i class="fa fa-envelope"></i>
+      </button>
+    </div>
+  </ng-template>
 </div>

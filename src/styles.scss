@@ -58,6 +58,14 @@ body::before {
   height: auto;
 }
 
+.app-button-no-border {
+  border: none;
+}
+
+.app-button-no-border:hover {
+  box-shadow: none;
+}
+
 @media screen and (max-width: 768px) {
   .app-button {
     padding: 8px 12px;
