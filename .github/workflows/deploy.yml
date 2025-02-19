@@ -1,0 +1,33 @@
+name: Deploy to OVH
+
+on:
+  push:
+    branches:
+      - ops/deploy-workflow
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Angular app
+        run: ng build --configuration production
+
+      - name: Setup SSH agent
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Deploy to OVH server
+        run: scp -r dist/nathanpignon/browser/* ${{ secrets.OVH_USER }}@${{ secrets.OVH_HOST }}:/www
