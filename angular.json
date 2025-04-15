@@ -33,7 +33,12 @@
             },
             "assets": [
               "src/assets",
-              "src/locale"
+              "src/locale",
+              {
+                "glob": "app-ads.txt",
+                "input": "src/assets",
+                "output": ""
+              }
             ],
             "styles": [
               "src/styles.scss"
