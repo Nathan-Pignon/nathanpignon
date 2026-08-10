@@ -7,6 +7,7 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import {HeaderComponent} from './components/header/header.component';
 import {ProjectsComponent} from './components/projects/projects.component';
 import {ExperienceComponent} from './components/experience/experience.component';
+import {ExpertiseComponent} from './components/expertise/expertise.component';
 import {SkillsComponent} from './components/skills/skills.component';
 import {FooterComponent} from './components/footer/footer.component';
 
@@ -23,6 +24,7 @@ const VIDEO_MIN_WIDTH = 900;
     AboutComponent,
     ProjectsComponent,
     ExperienceComponent,
+    ExpertiseComponent,
     SkillsComponent,
     ContactFormComponent,
     FooterComponent

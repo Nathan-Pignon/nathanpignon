@@ -7,6 +7,7 @@
     "profile": "Profile",
     "projects": "Projects",
     "experience": "Experience",
+    "expertise": "Expertise",
     "skills": "Skills",
     "contact": "Contact",
     "openMenu": "Open menu",
@@ -16,7 +17,7 @@
   },
   "hero": {
     "role": "Full-stack Developer — Java / Spring · Angular / Vue",
-    "pitch": "I design and ship complete applications — from platforms built for millions of accounts to mobile products I develop and deploy on my own.",
+    "pitch": "I design and develop web and mobile applications, from software architecture to production, with a strong focus on reliability, performance and scalability.",
     "stackLabel": "Main stack",
     "stackPrimary": "Java · Spring Boot · Angular · Vue",
     "stackSecondaryLabel": "Also",
@@ -120,6 +121,15 @@
     "avenirsesr": {
       "role": "Freelance Full-stack Developer",
       "summary": "Full-stack development on CoFolio, a sovereign e-portfolio built for millions of accounts, from architecture to security and CI/CD."
+    }
+  },
+  "expertise": {
+    "sectionTitle": "Areas of intervention",
+    "items": {
+      "architecture": "Architecture & Back-end",
+      "cicd": "CI/CD & DevOps",
+      "security": "Authentication & Security",
+      "frontend": "Front-end & Design System"
     }
   },
   "skills": {

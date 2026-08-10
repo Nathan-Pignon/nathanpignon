@@ -7,6 +7,7 @@
     "profile": "Profil",
     "projects": "Projets",
     "experience": "Expérience",
+    "expertise": "Expertise",
     "skills": "Compétences",
     "contact": "Contact",
     "openMenu": "Ouvrir le menu",
@@ -16,7 +17,7 @@
   },
   "hero": {
     "role": "Développeur Full-stack — Java / Spring · Angular / Vue",
-    "pitch": "Je conçois et je livre des applications complètes — de plateformes pensées pour plusieurs millions de comptes à des produits mobiles que je développe et déploie seul.",
+    "pitch": "Je conçois et développe des applications web et mobiles, de l’architecture technique jusqu’à la mise en production, avec une attention particulière portée à la fiabilité, aux performances et à l’évolutivité.",
     "stackLabel": "Stack principale",
     "stackPrimary": "Java · Spring Boot · Angular · Vue",
     "stackSecondaryLabel": "Également",
@@ -120,6 +121,15 @@
     "avenirsesr": {
       "role": "Développeur Full-stack freelance",
       "summary": "Développement full-stack sur CoFolio, e-portfolio souverain pensé pour plusieurs millions de comptes, de l'architecture à la sécurité en passant par le CI/CD."
+    }
+  },
+  "expertise": {
+    "sectionTitle": "Domaines d'intervention",
+    "items": {
+      "architecture": "Architecture & Back-end",
+      "cicd": "CI/CD & DevOps",
+      "security": "Authentification & Sécurité",
+      "frontend": "Front-end & Design System"
     }
   },
   "skills": {

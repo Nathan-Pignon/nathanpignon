@@ -1,0 +1,8 @@
+<app-section sectionId="expertise" [title]="'expertise.sectionTitle' | translate">
+  <div class="expertise-grid">
+    <app-card [style]="'expertise-card'" *ngFor="let item of items">
+      <app-icon class="expertise-icon" [name]="item.icon"></app-icon>
+      <h3>{{ ('expertise.items.' + item.key) | translate }}</h3>
+    </app-card>
+  </div>
+</app-section>

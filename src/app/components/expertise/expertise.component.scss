@@ -1,0 +1,35 @@
+@import "assets/style/mixins.scss";
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+
+  @include from(desktop) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.expertise-grid h3 {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  margin: 0;
+
+  @include from(desktop) {
+    font-size: var(--text-lg);
+  }
+}
+
+.expertise-icon {
+  color: var(--color-primary);
+
+  ::ng-deep .icon {
+    width: 3rem;
+    height: 3rem;
+
+    @include from(desktop) {
+      width: 5rem;
+      height: 5rem;
+    }
+  }
+}
