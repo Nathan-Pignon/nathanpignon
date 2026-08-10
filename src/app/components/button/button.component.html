@@ -1,0 +1,27 @@
+<ng-container *ngIf="href(); else buttonHost">
+  <a
+    class="btn btn--{{ variant() }} btn--{{ size() }}"
+    [href]="href()"
+    [attr.target]="target() ?? null"
+    [attr.rel]="target() === '_blank' ? 'noopener noreferrer' : null"
+    [attr.download]="download() ? '' : null"
+    [attr.aria-label]="ariaLabel() ?? null">
+    <ng-container [ngTemplateOutlet]="content"></ng-container>
+  </a>
+</ng-container>
+
+<ng-template #buttonHost>
+  <button
+    class="btn btn--{{ variant() }} btn--{{ size() }}"
+    [type]="type()"
+    [disabled]="disabled() || loading()"
+    [attr.aria-busy]="loading() ? 'true' : null"
+    [attr.aria-label]="ariaLabel() ?? null">
+    <span class="btn__spinner" *ngIf="loading()" aria-hidden="true"></span>
+    <ng-container [ngTemplateOutlet]="content"></ng-container>
+  </button>
+</ng-template>
+
+<ng-template #content>
+  <ng-content></ng-content>
+</ng-template>

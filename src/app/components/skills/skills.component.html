@@ -1,0 +1,10 @@
+<app-section sectionId="skills" [title]="'skills.sectionTitle' | translate" [subtitle]="'skills.sectionSubtitle' | translate">
+  <div class="skills-grid">
+    <div class="skill-group" *ngFor="let group of groups">
+      <h3>{{ ('skills.domains.' + group.domainKey) | translate }}</h3>
+      <div class="skill-items">
+        <app-badge *ngFor="let item of group.items">{{ item }}</app-badge>
+      </div>
+    </div>
+  </div>
+</app-section>

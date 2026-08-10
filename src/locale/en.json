@@ -2,8 +2,40 @@
   "jobTitle": "Full-stack Developer",
   "download": "Download my resume",
   "seeProjects": "See my projects",
+  "nav": {
+    "menuLabel": "Main navigation",
+    "profile": "Profile",
+    "projects": "Projects",
+    "experience": "Experience",
+    "skills": "Skills",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "switchToEnglish": "Switch to English",
+    "switchToFrench": "Switch to French"
+  },
+  "hero": {
+    "role": "Full-stack Developer — Java / Spring · Angular / Vue",
+    "pitch": "I design and ship complete applications — from platforms built for millions of accounts to mobile products I develop and deploy on my own.",
+    "stackLabel": "Main stack",
+    "stackPrimary": "Java · Spring Boot · Angular · Vue",
+    "stackSecondaryLabel": "Also",
+    "stackSecondary": "React · Flutter"
+  },
+  "about": {
+    "title": "Profile",
+    "bio": "I'm a full-stack developer working across the whole technical chain — architecture, back-end, front-end and deployment — on platforms built for millions of accounts as well as mobile products I design and ship on my own. Java/Spring Boot and Angular/Vue are my main stacks; I also use React and Flutter depending on the project."
+  },
+  "footer": {
+    "linksLabel": "Links",
+    "backToTop": "Back to top"
+  },
+  "a11y": {
+    "skipToContent": "Skip to main content"
+  },
   "contact": {
     "title": "Contact me",
+    "sectionSubtitle": "Got a project or an opportunity? Get in touch.",
     "name": "Name",
     "nameRequired": "Name is required.",
     "namePlaceholder": "Enter your name",
@@ -15,9 +47,19 @@
     "messagePlaceholder": "Type your message here",
     "send": "Send",
     "sending": "Sending...",
-    "success": "Thank you for your message. We will contact you soon!"
+    "success": "Thank you for your message. I will contact you soon!"
   },
   "projects": {
+    "sectionTitle": "Projects",
+    "sectionSubtitle": "A selection of professional engagements and personal projects.",
+    "featuredLabel": "Featured",
+    "readMore": "Read the full description",
+    "readLess": "Show less",
+    "type": {
+      "personal": "Personal",
+      "professional": "Professional",
+      "school": "School"
+    },
     "github": " View the GitHub repo",
     "ios": " View on the App Store",
     "android": " View on the Play Store",
@@ -25,21 +67,30 @@
       "title": "Personal",
       "boursia": {
         "title": "BoursIA",
+        "summary": "An iOS app for AI-driven stock market analysis, designed and built solo from choosing the technologies to shipping it on the App Store.",
         "description": "📱 BoursIA is a mobile (iOS) application that allows you to analyze publicly traded companies using artificial intelligence as well as real-time financial and media data. This project allowed me to design and develop every part of the application, from choosing the technologies to deploying it on a server and the App Store.\n\n🛠️ Technologies and practices used:\n✅ Front-end: Cross-platform development in Flutter.\n✅ Back-end: Microservices architecture with Java Spring Boot.\n✅ Security: Implementation of Spring Security for managing authentication and authorization.\n✅ API & Data: Integration of multiple external APIs (financial markets, economic data, stock market and geopolitical news).\n✅ Deployment & DevOps: Server hosting via Docker, CI/CD automation for continuous updates."
       },
-      "portfolio": {
-        "title": "Portfolio",
-        "description": "📜 My portfolio is the project you are currently viewing. It is a website designed to showcase my achievements and skills. Through this project, I was able to design and develop a modern and responsive interface in Angular, while integrating a FastAPI back-end dedicated to contact management.\n\n🛠️ Technologies and practices used:\n✅ Front-end: Development of an interactive and responsive interface with Angular.\n✅ Back-end: Setup of a contact service with FastAPI.\n✅ Deployment & DevOps: Containerization and server deployment via Docker."
+      "ujue": {
+        "title": "UJUE",
+        "summary": "A daily-riddle mobile app with scheduled local notifications and a clean, modern mobile UX/UI.",
+        "description": "🧩 UJUE is a personal mobile application built around a simple concept: a new riddle to solve every day. Users can submit as many answers as needed until they find the correct solution and browse previous riddles through a calendar.\nI created this project mainly to experiment with Flutter and its ecosystem, design a clean and modern mobile UX/UI, and explore scheduled local notifications. A notification is notably scheduled every day at noon when the daily riddle has not yet been solved.\n\n🛠️ Technologies and practices used:\n✅ Mobile: Cross-platform iOS and Android development using Flutter and Dart.\n✅ Architecture & State Management: Event and state management using the BLoC pattern (flutter_bloc), with clear separation between services, models, screens and reusable components.\n✅ Back-end: Lightweight API developed with FastAPI and Python, structured into Router → Service → CRUD → Model layers.\n✅ API & Data: HTTP communication using Dio on the Flutter side and data validation/serialization through dedicated Pydantic schemas on the API side.\n✅ Database: Data persistence using SQLAlchemy with dedicated models for riddles and their translations.\n✅ Notifications: Scheduled local notifications using flutter_local_notifications with timezone management.\n✅ UX/UI: Design of a clean and modern interface featuring animations, visual feedback and victory effects.\n✅ Navigation & i18n: Declarative navigation using GoRouter and French/English internationalization through Flutter's i18n tooling.\n✅ Local persistence: Local data and preference management using SharedPreferences."
       }
     },
     "professional": {
       "title": "Professional",
+      "avenirsesr": {
+        "title": "AVENIR(s) ESR",
+        "summary": "An open-source e-portfolio for higher education, built to support 600,000 to 3 million accounts. Freelance work across the entire technical stack.",
+        "description": "🎓 AVENIR(s) ESR is developing CoFolio, an open-source and sovereign e-portfolio platform for higher education, designed to support competency assessment and help students build their academic and professional life projects. Built for nationwide deployment at scale, the platform is designed to support between 600,000 and 3 million accounts.\nAs a freelance Full-stack Developer, I have been involved since the early stages of the project across the entire technical stack: architecture, back-end, front-end, authentication, security, CI/CD and deployment. Building a large-scale platform from the ground up has also given me the opportunity to contribute to architectural decisions, project structuring and the implementation of development best practices.\n\n🛠️ Technologies and practices used:\n✅ Back-end: Development of microservices using Java 21 and Spring Boot 3 following a hexagonal architecture, with unit and integration testing.\n✅ Front-end: Development with Vue 3, unit and E2E testing, accessibility (a11y) considerations and contributions to the internal Design System.\n✅ Database: PostgreSQL with version-controlled database schema migrations using Liquibase.\n✅ Authentication: CAS and LDAP integration through OIDC and implementation of a BFF architecture to securely manage access/refresh tokens, using Spring sessions initially and Redis afterwards.\n✅ Security: Implementation of RBAC for fine-grained role and permission management, token introspection and secure authentication context propagation between microservices using HMAC signatures.\n✅ API & Infrastructure: Management and security of service-to-service communication using Apache and Apache APISIX.\n✅ CI/CD & GitHub Actions: Design of reusable workflows and composite actions to standardize continuous integration and deployment across multiple projects.\n✅ Automation: Implementation of PR validation pipelines, automated report generation and publication through GitHub Pages, multi-environment deployments with conditional E2E testing, automated task/User Story management and team notifications.\n✅ DevOps: Setup and administration of self-hosted GitHub Actions runners on project servers.\n✅ Agile methodology: Contribution to technical and architectural decisions, feature design, code reviews, refinement sessions, User Story breakdown and continuous improvement of development practices."
+      },
       "sopraSteria": {
         "title": "Sopra Steria",
+        "summary": "Java/Spring Boot development and migration, AngularJS-to-Angular 15 redesign for SNCF's train supervision applications.",
         "description": "🚅 Sopra Steria was an exciting experience where I contributed to developing new features for SNCF's train supervision applications. This project allowed me to work on the entire development cycle, from migrating back-end systems to redesigning and optimizing user interfaces, as well as adding new functionalities and fixing bugs.\nOver these two years, I gained a wealth of technical experience and skills.\n\n🛠️ Technologies and practices used:\n✅ Back-end: Development and migration in Java with Spring Boot, upgrading from version 2.7 to 3.2.\n✅ Front-end: Redesign of interfaces from AngularJS to Angular 15, including optimizations (lazy loading, OnPush strategy, use of trackBy, and prevention of memory leaks).\n✅ Testing: Implementation of unit tests to ensure code quality.\n✅ Database: Development of SQL scripts for updating PostgreSQL databases.\n✅ DevOps: Automation of deployments and deliveries in CI/CD using Ansible and Jenkins.\n✅ Agile Methodology: Collaborative work in an agile environment (daily scrums, retrospectives, user story breakdown, poker planning)."
       },
       "millet": {
         "title": "Groupe Millet",
+        "summary": "Custom desktop and mobile applications (Windev, Windev Mobile) with hardware integration (Arduino, scale, camera).",
         "description": "🪟 Groupe Millet marked my entry into the professional world. During these two years, I designed and developed custom software solutions to meet internal needs. I worked on various projects, from developing desktop applications in Windev to creating Android mobile applications with Windev Mobile, incorporating advanced features such as barcode/QR code scanning, geolocation, dock assignment via notifications for drivers, LED management, weight verification using a scale, and more.\n\n🛠️ Technologies and practices used:\n✅ Development Environment: Designing applications with Windev and Windev Mobile to meet specific internal needs.\n✅ Hardware Integration: Management of devices (Arduino, scale, camera).\n✅ Analysis and Design: Requirements analysis, feasibility studies, and development of custom solutions."
       }
     },
@@ -47,24 +98,39 @@
       "title": "School",
       "fettuccini": {
         "title": "Fettuccini",
+        "summary": "An NFC-and-LED-based dealer assistant for poker tables, a collaborative project with a team of over 10 people.",
         "description": "♠️ Fettuccini is a collaborative project carried out by a team of over 10 people using agile methodology. The objective is to assist the dealer with his recurrent and time-consuming tasks during games. For this purpose, the cards and chips are equipped with NFC tags, read by readers placed under the table, while LEDs installed around the table provide real-time information (whose turn it is, players' actions, etc.). A tablet interface is dedicated to the dealer, displaying a representation of the table, calculation of bets and the pot, information about the current level, blinds, each player's effective stack, as well as chip distribution in the event of a tie to determine the winner(s) of each hand.\n\n🛠️ Technologies and practices used:\n✅ Back-end: Java Spring Boot\n✅ Front-end: React\n✅ Database: MongoDB\n✅ Agile methodology\n✅ Hardware integration to automate the reading of cards and chips"
-      },
-      "web800": {
-        "title": "T-WEB-800",
-        "description": "🗺️ T-WEB-800 is a travel application that allows users to plan their trips by selecting cities and creating their itinerary. In addition, the site provides detailed information about local activities, events, bars, restaurants, accommodations, and sports activities around the selected cities. This project was developed using TDD (Test Driven Development).\n\n🛠️ Technologies and practices used:\n✅ Back-end: Spring Boot (Java 17) microservices\n✅ Front-end: Angular\n✅ Database: MySQL\n✅ Integration of external APIs (Google Maps, Amadeus)\n✅ TDD (Test Driven Development) to ensure code quality"
-      },
-      "dev700": {
-        "title": "T-DEV-700",
-        "description": "🛒 T-DEV-700 is a shop management solution that handles order processing, transaction management, and inventory tracking. The application consists of a central server and two mobile clients: a 'shop' application intended for employees to view inventory and initiate the payment process via websockets, and a payment terminal that processes transactions by reading (via NFC) a bank card.\n\n🛠️ Technologies and practices used:\n✅ Back-end: Java, Spring Boot, MariaDB, Redis, Mailhog\n✅ Mobile: Flutter for the shop application and the payment terminal\n✅ Communication: Websockets to synchronize transactions in real time"
-      },
-      "dat901": {
-        "title": "T-DAT-901",
-        "description": "📊 This project aimed to analyze in real time the value of certain cryptocurrencies, and for this, we used Apache Spark. A scraper collected the data and sent it directly to a Kafka topic. This topic then served as a source for Apache Spark, which continuously read the data to analyze it and store the results in InfluxDB for visualization via Grafana.\n\n🛠️ Technologies and practices used:\n✅ Processing: Real-time analysis with Apache Spark.\n✅ Streaming: Data transmission via Kafka.\n✅ Storage: Storing the results in InfluxDB.\n✅ Visualization: Interactive dashboards with Grafana."
-      },
-      "dev810": {
-        "title": "T-DEV-810",
-        "description": "\uD83E\uDE7A The objective of this project was to detect pneumonia in patients using lung X-rays. It was our first AI project; we used a convolutional neural network (CNN) to classify the images. We trained our model on a dataset of annotated lung X-rays and then tested its accuracy on a test dataset.\n\n🛠️ Technologies and practices used:\n✅ AI: Use of a convolutional neural network (CNN) for image classification.\n✅ Training: Supervised learning on an annotated dataset.\n✅ Testing: Validation of the model's accuracy on a test dataset.\n✅ Notebooks to experiment and refine our models"
       }
+    }
+  },
+  "experience": {
+    "sectionTitle": "Experience",
+    "sectionSubtitle": "Three engagements, from my first role to large-scale platforms.",
+    "ongoing": "Ongoing",
+    "millet": {
+      "role": "Developer",
+      "duration": "2 years",
+      "summary": "Design and development of custom desktop and mobile solutions (Windev, Windev Mobile), with hardware device integration."
+    },
+    "sopraSteria": {
+      "role": "Full-stack Developer",
+      "duration": "2 years",
+      "summary": "Java/Spring Boot development and migration (2.7 → 3.2), redesign of interfaces from AngularJS to Angular 15 for SNCF's train supervision applications."
+    },
+    "avenirsesr": {
+      "role": "Freelance Full-stack Developer",
+      "summary": "Full-stack development on CoFolio, a sovereign e-portfolio built for millions of accounts, from architecture to security and CI/CD."
+    }
+  },
+  "skills": {
+    "sectionTitle": "Skills",
+    "sectionSubtitle": "The technologies I actually use on my projects and engagements, grouped by domain.",
+    "domains": {
+      "backend": "Back-end",
+      "frontend": "Front-end",
+      "mobile": "Mobile",
+      "devops": "DevOps & Infra",
+      "security": "Security & data"
     }
   }
 }

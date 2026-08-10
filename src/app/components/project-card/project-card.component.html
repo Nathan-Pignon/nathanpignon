@@ -1,0 +1,54 @@
+<app-card [style]="featured() ? 'project-card project-card--featured' : 'project-card'">
+  @if (featured()) {
+    <div class="project-card-media">
+      <img
+        [ngSrc]="project().image"
+        [width]="project().imageWidth"
+        [height]="project().imageHeight"
+        alt=""
+        class="project-card-image">
+    </div>
+  }
+
+  <div class="project-card-body">
+    <div class="project-card-head">
+      <div class="project-card-heading">
+        @if (!featured()) {
+          <span class="project-card-thumb">
+            <img
+              [ngSrc]="project().image"
+              [width]="project().imageWidth"
+              [height]="project().imageHeight"
+              alt=""
+              class="project-card-thumb-image">
+          </span>
+        }
+        <h3>{{ project().name }}</h3>
+        <app-badge tone="neutral">{{ ('projects.type.' + project().type) | translate }}</app-badge>
+        <app-badge *ngIf="featured()" tone="accent">{{ 'projects.featuredLabel' | translate }}</app-badge>
+      </div>
+
+      <div class="project-card-links" *ngIf="project().github || project().ios || project().android">
+        <app-button *ngIf="project().github as githubUrl" variant="ghost" size="sm" [href]="githubUrl" target="_blank">
+          <app-icon name="external-link"></app-icon>{{ 'projects.github' | translate }}
+        </app-button>
+        <app-button *ngIf="project().ios as iosUrl" variant="ghost" size="sm" [href]="iosUrl" target="_blank">
+          <app-icon name="external-link"></app-icon>{{ 'projects.ios' | translate }}
+        </app-button>
+        <app-button *ngIf="project().android as androidUrl" variant="ghost" size="sm" [href]="androidUrl" target="_blank">
+          <app-icon name="external-link"></app-icon>{{ 'projects.android' | translate }}
+        </app-button>
+      </div>
+    </div>
+
+    <p class="project-card-summary">{{ project().summary }}</p>
+
+    <div class="project-card-tags">
+      <app-badge *ngFor="let tag of project().tags">{{ tag }}</app-badge>
+    </div>
+
+    <app-disclosure [label]="'projects.readMore' | translate" [labelOpen]="'projects.readLess' | translate">
+      <p class="project-card-description">{{ project().description }}</p>
+    </app-disclosure>
+  </div>
+</app-card>

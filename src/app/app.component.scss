@@ -1,1 +1,79 @@
-@import "assets/style/variables.scss";
+:host {
+  display: block;
+}
+
+.intro-band {
+  position: relative;
+  isolation: isolate;
+
+  // Header + Hero + Profil all sit on the cinematic video: remap the
+  // neutral tokens to their light equivalents so every descendant
+  // (including Button/Badge internals, which read these vars through
+  // the DOM cascade regardless of component boundaries) flips
+  // automatically.
+  --color-text-primary: #ffffff;
+  --color-text-secondary: rgba(255, 255, 255, .82);
+  --color-text-faint: rgba(255, 255, 255, .6);
+  --color-border: rgba(255, 255, 255, .28);
+  --color-border-strong: rgba(255, 255, 255, .42);
+}
+
+.intro-media-bg {
+  position: absolute;
+  // The header reserves its own height in normal flow above this band,
+  // so pull the background up to start at the true top of the page —
+  // otherwise the transparent header reveals the plain page background
+  // for its own height, showing up as a light band at the very top.
+  // A couple of extra pixels guard against sub-pixel rounding leaving
+  // a hairline sliver on some zoom levels / device pixel ratios.
+  top: calc(-1 * var(--header-height) - 2px);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  background: #06070b;
+  overflow: hidden;
+}
+
+.intro-media-poster,
+.intro-media-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.intro-media-video {
+  z-index: 1;
+}
+
+.intro-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  // Tinted toward the video's own cool dark-navy tone (rather than a
+  // neutral black) so the overlay reads as designed for this footage,
+  // not a generic dark filter. Slightly heavier at the very bottom so
+  // the cut into the light "Projets" section below stays crisp even
+  // where the footage itself is bright.
+  background:
+    linear-gradient(100deg, rgba(7, 9, 15, .87) 0%, rgba(7, 9, 15, .7) 45%, rgba(7, 9, 15, .45) 100%),
+    linear-gradient(0deg, rgba(5, 6, 10, .55) 0%, rgba(5, 6, 10, 0) 12%);
+
+  @media (max-width: 899px) {
+    background:
+      linear-gradient(180deg, rgba(7, 9, 15, .78) 0%, rgba(7, 9, 15, .85) 100%),
+      linear-gradient(0deg, rgba(5, 6, 10, .55) 0%, rgba(5, 6, 10, 0) 8%);
+  }
+}
+
+// app-hero / app-about host elements belong to this component's own
+// template, so they can be styled directly (no ::ng-deep) to sit above
+// the scrim.
+.intro-band > app-hero,
+.intro-band > app-about {
+  position: relative;
+  z-index: 3;
+  display: block;
+}

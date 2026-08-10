@@ -1,0 +1,15 @@
+<button
+  type="button"
+  class="disclosure-trigger"
+  (click)="toggle()"
+  [attr.aria-expanded]="open()"
+  [attr.aria-controls]="contentId">
+  <span>{{ open() ? labelOpen() : label() }}</span>
+  <app-icon name="chevron-down" class="disclosure-chevron" [class.disclosure-chevron--open]="open()"></app-icon>
+</button>
+
+<div [id]="contentId" class="disclosure-content" [class.disclosure-content--open]="open()">
+  <div class="disclosure-inner">
+    <ng-content></ng-content>
+  </div>
+</div>

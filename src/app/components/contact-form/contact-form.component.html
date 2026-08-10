@@ -1,7 +1,6 @@
-<div class="contact-form-card" id="contact">
+<app-section sectionId="contact" [title]="'contact.title' | translate" [subtitle]="'contact.sectionSubtitle' | translate" containerSize="sm" background="alt">
   <app-card [style]="'contact-card'">
     <div *ngIf="!emailSent; else validationTemplate">
-      <h1><i class="fa-solid fa-envelope"></i>{{ 'contact.title' | translate }}</h1>
       <form *ngIf="!isLoading; else loadingTemplate" [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
         <div class="form-group">
           <label for="name">{{ 'contact.name' | translate }}</label>
@@ -31,13 +30,10 @@
         </div>
 
         <div class="buttons-container">
-          <button type="submit" [disabled]="contactForm.invalid">
-            {{ 'contact.send' | translate }} <i class="fa fa-paper-plane"></i>
-          </button>
-          <div class="socials-medias-container">
-            <a href="https://github.com/Nathan-Pignon" target="_blank"><i class="fa-brands fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/nathan-pignon-b8b395199/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-          </div>
+          <app-button type="submit" variant="primary" [disabled]="contactForm.invalid">
+            {{ 'contact.send' | translate }}
+            <app-icon name="send"></app-icon>
+          </app-button>
         </div>
       </form>
       <ng-template #loadingTemplate>
@@ -61,4 +57,4 @@
       </div>
     </ng-template>
   </app-card>
-</div>
+</app-section>

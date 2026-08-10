@@ -1,115 +1,35 @@
-@import "assets/style/variables.scss";
+@import "assets/style/mixins.scss";
 
 .card {
-  background: rgba(91, 91, 91, 0.3);
-  color: $white-color;
-  border-radius: 2vw;
-  padding: 2vw;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  margin: 1vh auto;
-  backdrop-filter: blur(50px);
-
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  transition: box-shadow var(--duration-base) var(--ease), border-color var(--duration-base) var(--ease);
 
   &:hover {
-    transform: translateY(-0.5vh);
-    box-shadow: 0 1.2vw 2vw rgba(0, 0, 0, 0.2), inset 0 0 1vw rgba(255, 255, 255, 0.3);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-border-strong);
   }
-}
-
-.value-card {
-  width: 30vw;
-  max-width: 45%;
-  min-width: 20vw;
-  height: 25vh;
-  text-align: center;
-  box-shadow: 0 0.4vw 0.6vw rgba(0, 0, 0, 0.5), inset 0 0 1vw rgba(255, 255, 255, 0.2);
 }
 
 .contact-card {
   text-align: center;
-  box-shadow: 0 0.4vw 0.6vw rgba(0, 0, 0, 0.5), inset 0 0 1vw rgba(255, 255, 255, 0.2);
+  max-width: var(--container-sm);
+  margin-inline: auto;
 }
 
-.project-card-container {
+.project-card {
+  padding: 0;
+  overflow: hidden;
   display: flex;
-  align-items: center;
-  margin-bottom: 40px;
-  padding: 0 !important;
-  box-shadow: 0 0.4vw 0.6vw rgba(0, 0, 0, 0.5), inset 0 0 1vw rgba(255, 255, 255, 0.2);
+  flex-direction: column;
+  height: 100%;
 }
 
-.project-card-container-reverse {
-  display: flex;
-  align-items: center;
-  margin-bottom: 40px;
-  padding: 0 !important;
-  box-shadow: 0 0.4vw 0.6vw rgba(0, 0, 0, 0.5), inset 0 0 1vw rgba(255, 255, 255, 0.2);
-  flex-direction: row-reverse;
-  text-align: right;
-}
-
-.projects-menu {
-  display: flex;
-  justify-content: center;
-  gap: 1vw;
-}
-
-.personal {
-  background: linear-gradient(to bottom, transparent, rgba($black-color, 0.5), rgba($black-color, 0.9)),
-  url("/assets/images/personal.png") no-repeat center center;
-  background-size: cover, cover;
-  position: relative;
-  filter: grayscale(100%);
-}
-
-.school {
-  background: linear-gradient(to bottom, transparent, rgba($black-color, 0.5), rgba($black-color, 0.9)),
-  url("/assets/images/school.jpg") no-repeat center center;
-  background-size: cover, cover;
-  filter: grayscale(100%);
-}
-
-.professional {
-  background: linear-gradient(to bottom, transparent, rgba($black-color, 0.5), rgba($black-color, 0.9)),
-  url("/assets/images/professional.png") no-repeat center center;
-  background-size: cover, cover;
-  filter: grayscale(100%);
-}
-
-.personal:hover,
-.school:hover,
-.professional:hover {
-  filter: grayscale(0%);
-  cursor: pointer;
-}
-
-.project-menu-selected {
-  filter: grayscale(0%);
-}
-
-@media (max-width: 768px) {
-  .card {
-    margin: 2vh auto;
-  }
-
-  .value-card {
-    width: 80vw;
-    max-width: 90%;
-    margin: 2vh auto;
-    height: 35vh;
-  }
-
-  .project-card-container,
-  .project-card-container-reverse {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .projects-menu {
-    display: none;
-  }
-
-  .project-menu-selected {
-    display: flex;
+.project-card--featured {
+  @include from(desktop) {
+    flex-direction: row;
   }
 }

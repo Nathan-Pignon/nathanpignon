@@ -1,0 +1,33 @@
+@import "assets/style/mixins.scss";
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+
+  @include from(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include from(desktop) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.skill-group {
+  h3 {
+    font-size: var(--text-base);
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    color: var(--color-text-faint);
+    font-weight: var(--weight-medium);
+    margin: 0 0 var(--space-3);
+  }
+}
+
+.skill-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
