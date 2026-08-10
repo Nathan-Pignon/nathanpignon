@@ -1,50 +1,63 @@
-<div class="header-container">
-  <ng-container *ngIf="isMobileView; else desktopTemplate">
-    <div class="hamburger-menu-container">
-      <div class="hamburger-container" (click)="toggleMenu()">
-        <i class="fa fa-bars"></i>
-      </div>
-      <ng-container *ngIf="menuOpen">
-        <div class="mobile-menu">
-          <button type="button" class="app-button" (click)="switchLanguage()">
-            {{ currentLanguage === 'fr' ? 'Switch to English' : 'Passer en Français' }}
-            <img [ngSrc]="getLanguageImagePath()"
-                 [alt]="currentLanguage === 'fr' ? 'Drapeau anglais' : 'Drapeau français'"
-                 width="20"
-                 height="20">
-          </button>
-          <button type="button" class="app-button app-button-no-border" (click)="scrollToElement('projects-menu')">
-            {{ 'seeProjects' | translate }}
-            <img ngSrc="assets/images/project-icon.png" alt="Projects icon" height="512" width="512">
-          </button>
-          <button type="button" class="app-button app-button-no-border" (click)="scrollToElement('contact')">
-            {{ 'contact.title' | translate }}
-            <i class="fa fa-envelope"></i>
-          </button>
-        </div>
-      </ng-container>
-    </div>
-  </ng-container>
+<header class="site-header" [class.site-header--scrolled]="scrolled() || menuOpen()">
+  <app-container size="lg">
+    <div class="header-row">
+      <a class="brand" href="#hero" (click)="navigate($event, 'hero')">Nathan Pignon</a>
 
-  <ng-template #desktopTemplate>
-    <div class="language-container">
-      <button type="button" class="app-button" (click)="switchLanguage()">
-        {{ currentLanguage === 'fr' ? 'Switch to English' : 'Passer en Français' }}
-        <img [ngSrc]="getLanguageImagePath()"
-             [alt]="currentLanguage === 'fr' ? 'Drapeau anglais' : 'Drapeau français'"
-             width="20"
-             height="20">
-      </button>
+      <nav class="nav-desktop" [attr.aria-label]="'nav.menuLabel' | translate">
+        <a class="nav-link" href="#about" (click)="navigate($event, 'about')">{{ 'nav.profile' | translate }}</a>
+        <a class="nav-link" href="#projects" (click)="navigate($event, 'projects')">{{ 'nav.projects' | translate }}</a>
+        <a class="nav-link" href="#experience" (click)="navigate($event, 'experience')">{{ 'nav.experience' | translate }}</a>
+        <a class="nav-link" href="#skills" (click)="navigate($event, 'skills')">{{ 'nav.skills' | translate }}</a>
+      </nav>
+
+      <div class="header-actions">
+        <button
+          type="button"
+          class="lang-toggle nav-desktop-only"
+          (click)="switchLanguage()"
+          [attr.aria-label]="(currentLanguage() === 'fr' ? 'nav.switchToEnglish' : 'nav.switchToFrench') | translate">
+          {{ currentLanguage() === 'fr' ? 'EN' : 'FR' }}
+        </button>
+
+        <app-button
+          class="nav-desktop-only"
+          variant="primary"
+          size="sm"
+          href="#contact"
+          (click)="navigate($event, 'contact')">
+          {{ 'nav.contact' | translate }}
+        </app-button>
+
+        <app-icon-button
+          #menuToggle
+          class="menu-toggle"
+          [icon]="menuOpen() ? 'close' : 'bars'"
+          [ariaLabel]="(menuOpen() ? 'nav.closeMenu' : 'nav.openMenu') | translate"
+          [pressed]="menuOpen()"
+          (click)="toggleMenu()">
+        </app-icon-button>
+      </div>
     </div>
-    <div class="menu-container">
-      <button type="button" class="app-button app-button-no-border" (click)="scrollToElement('projects-menu')">
-        {{ 'seeProjects' | translate }}
-        <img ngSrc="assets/images/project-icon.png" alt="Projects icon" height="512" width="512">
-      </button>
-      <button type="button" class="app-button app-button-no-border" (click)="scrollToElement('contact')">
-        {{ 'contact.title' | translate }}
-        <i class="fa fa-envelope"></i>
-      </button>
-    </div>
-  </ng-template>
-</div>
+  </app-container>
+</header>
+
+@if (menuOpen()) {
+  <div
+    #drawer
+    class="mobile-drawer"
+    role="dialog"
+    aria-modal="true"
+    [attr.aria-label]="'nav.menuLabel' | translate"
+    (keydown)="onDrawerKeydown($event)">
+    <nav class="drawer-nav">
+      <a class="drawer-link" href="#about" (click)="navigate($event, 'about')">{{ 'nav.profile' | translate }}</a>
+      <a class="drawer-link" href="#projects" (click)="navigate($event, 'projects')">{{ 'nav.projects' | translate }}</a>
+      <a class="drawer-link" href="#experience" (click)="navigate($event, 'experience')">{{ 'nav.experience' | translate }}</a>
+      <a class="drawer-link" href="#skills" (click)="navigate($event, 'skills')">{{ 'nav.skills' | translate }}</a>
+      <a class="drawer-link" href="#contact" (click)="navigate($event, 'contact')">{{ 'nav.contact' | translate }}</a>
+    </nav>
+    <button type="button" class="drawer-lang" (click)="switchLanguage()">
+      {{ (currentLanguage() === 'fr' ? 'nav.switchToEnglish' : 'nav.switchToFrench') | translate }}
+    </button>
+  </div>
+}

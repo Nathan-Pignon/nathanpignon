@@ -1,0 +1,42 @@
+<section id="hero" class="hero">
+  <app-container size="lg">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <h1 class="hero-name">Nathan Pignon</h1>
+        <p class="hero-role">{{ 'hero.role' | translate }}</p>
+        <p class="hero-pitch">{{ 'hero.pitch' | translate }}</p>
+
+        <div class="hero-cta">
+          <app-button variant="primary" href="#projects" (click)="scrollToProjects($event)">
+            {{ 'seeProjects' | translate }}
+            <app-icon name="arrow-right"></app-icon>
+          </app-button>
+          <app-button variant="secondary" href="assets/Nathan_Pignon_CV_Dev_FullStack.pdf" [download]="true">
+            {{ 'download' | translate }}
+          </app-button>
+        </div>
+
+        <dl class="hero-stack">
+          <div class="hero-stack-group">
+            <dt>{{ 'hero.stackLabel' | translate }}</dt>
+            <dd>{{ 'hero.stackPrimary' | translate }}</dd>
+          </div>
+          <div class="hero-stack-group hero-stack-group--secondary">
+            <dt>{{ 'hero.stackSecondaryLabel' | translate }}</dt>
+            <dd>{{ 'hero.stackSecondary' | translate }}</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="hero-media">
+        <img
+          ngSrc="assets/images/profil-picture.png"
+          width="760"
+          height="760"
+          priority
+          class="hero-photo"
+          alt="Nathan Pignon">
+      </div>
+    </div>
+  </app-container>
+</section>

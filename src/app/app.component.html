@@ -1,4 +1,38 @@
+<a class="skip-link" href="#main-content">{{ 'a11y.skipToContent' | translate }}</a>
 <app-header></app-header>
-<app-title></app-title>
-<app-projects></app-projects>
-<app-contact-form></app-contact-form>
+<main id="main-content">
+  <div class="intro-band">
+    <div class="intro-media-bg">
+      <img
+        ngSrc="assets/images/hero-background-poster.jpg"
+        width="1920"
+        height="1080"
+        priority
+        class="intro-media-poster"
+        alt="">
+      @if (videoEnabled()) {
+        <video
+          #introVideo
+          class="intro-media-video"
+          [muted]="true"
+          loop
+          playsinline
+          preload="none"
+          poster="assets/images/hero-background-poster.jpg"
+          aria-hidden="true">
+          <source src="assets/videos/hero-background.mp4" type="video/mp4">
+        </video>
+      }
+      <div class="intro-scrim" aria-hidden="true"></div>
+    </div>
+
+    <app-hero></app-hero>
+    <app-about></app-about>
+  </div>
+
+  <app-projects></app-projects>
+  <app-experience></app-experience>
+  <app-skills></app-skills>
+  <app-contact-form></app-contact-form>
+</main>
+<app-footer></app-footer>

@@ -2,106 +2,114 @@ import {ProjectModel} from '../models/project.model';
 import {ProjectTypeEnum} from '../enums/project-type.enum';
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, Subscription} from 'rxjs';
+import {map} from 'rxjs/operators';
 import {TranslateService} from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectsService {
-  private currentProjectType: BehaviorSubject<ProjectTypeEnum> = new BehaviorSubject<ProjectTypeEnum>(ProjectTypeEnum.PERSONAL);
-  currentProjectType$ = this.currentProjectType.asObservable();
+  private projectsUpdated: BehaviorSubject<void> = new BehaviorSubject<void>(undefined);
+  projects$ = this.projectsUpdated.asObservable().pipe(map(() => this.getAllProjects()));
 
   private translationSubscription!: Subscription;
 
   constructor(private translate: TranslateService) {
     this.translationSubscription = this.translate
       .stream('jobTitle')
-      .subscribe((translation: string) => {
-        if (this.currentProjectType.value) {
-          this.changeProjectType(this.currentProjectType.value);
-        }
+      .subscribe(() => {
+        this.projectsUpdated.next();
       });
   }
 
-  public changeProjectType(projectType: ProjectTypeEnum): void {
-    this.currentProjectType.next(projectType);
+  public getAllProjects(): ProjectModel[] {
+    return [
+      ...this.getProfessionalProjects(),
+      ...this.getPersonalProjects(),
+      ...this.getSchoolProjects()
+    ];
   }
 
-  public getProjectsByType(projectType: ProjectTypeEnum): ProjectModel[] {
-    switch (projectType) {
-      case ProjectTypeEnum.PERSONAL:
-        return this.getPersonalProjects();
-      case ProjectTypeEnum.SCHOOL:
-        return this.getSchoolProjects();
-      case ProjectTypeEnum.PROFESSIONAL:
-        return this.getProfessionalProjects();
-      default:
-        return [];
-    }
-  }
-
-  public getPersonalProjects(): ProjectModel[] {
+  private getPersonalProjects(): ProjectModel[] {
     return [
       {
         name: this.translate.instant('projects.personal.boursia.title'),
+        summary: this.translate.instant('projects.personal.boursia.summary'),
         description: this.translate.instant('projects.personal.boursia.description'),
+        tags: ['Flutter', 'Spring Boot', 'Microservices', 'Spring Security', 'Docker', 'CI/CD'],
         image: 'assets/images/BoursIA-app-logo.png',
+        imageWidth: 1024,
+        imageHeight: 1024,
+        type: ProjectTypeEnum.PERSONAL,
+        featured: false,
         ios: 'https://apps.apple.com/us/app/boursia/id6741479554?platform=iphone',
       },
       {
-        name: this.translate.instant('projects.personal.portfolio.title'),
-        description: this.translate.instant('projects.personal.portfolio.description'),
-        image: 'assets/images/portfolio.png',
-        github: 'https://github.com/Nathan-Pignon/nathanpignon',
+        name: this.translate.instant('projects.personal.ujue.title'),
+        summary: this.translate.instant('projects.personal.ujue.summary'),
+        description: this.translate.instant('projects.personal.ujue.description'),
+        tags: ['Flutter', 'BLoC', 'FastAPI', 'Python', 'SQLAlchemy'],
+        image: 'assets/images/ujue_logo.png',
+        imageWidth: 500,
+        imageHeight: 500,
+        type: ProjectTypeEnum.PERSONAL,
+        featured: false,
+        ios: 'https://apps.apple.com/us/app/ujue/id6741479554?platform=iphone',
       }
     ];
   }
 
-  public getSchoolProjects(): ProjectModel[] {
+  private getSchoolProjects(): ProjectModel[] {
     return [
       {
         name: this.translate.instant('projects.school.fettuccini.title'),
+        summary: this.translate.instant('projects.school.fettuccini.summary'),
         description: this.translate.instant('projects.school.fettuccini.description'),
+        tags: ['Java', 'Spring Boot', 'React', 'MongoDB', 'NFC'],
         image: 'assets/images/fettuccini.png',
-      },
-      {
-        name: this.translate.instant('projects.school.web800.title'),
-        description: this.translate.instant('projects.school.web800.description'),
-        image: 'assets/images/web800-logo.png',
-        github: 'https://github.com/Nathan-Pignon/T-WEB-800',
-      },
-      {
-        name: this.translate.instant('projects.school.dev700.title'),
-        description: this.translate.instant('projects.school.dev700.description'),
-        image: 'assets/images/dev700-logo.png',
-        github: 'https://github.com/Nathan-Pignon/T-DEV-700',
-      },
-      {
-        name: this.translate.instant('projects.school.dat901.title'),
-        description: this.translate.instant('projects.school.dat901.description'),
-        image: 'assets/images/dat901-logo.png',
-        github: 'https://github.com/Nathan-Pignon/T-DAT-901',
-      },
-      {
-        name: this.translate.instant('projects.school.dev810.title'),
-        description: this.translate.instant('projects.school.dev810.description'),
-        image: 'assets/images/dev810-logo.png',
-        github: 'https://github.com/Nathan-Pignon/T-DEV-810',
+        imageWidth: 2048,
+        imageHeight: 1536,
+        type: ProjectTypeEnum.SCHOOL,
+        featured: false,
       }
     ];
   }
 
-  public getProfessionalProjects(): ProjectModel[] {
+  private getProfessionalProjects(): ProjectModel[] {
     return [
       {
+        name: this.translate.instant('projects.professional.avenirsesr.title'),
+        summary: this.translate.instant('projects.professional.avenirsesr.summary'),
+        description: this.translate.instant('projects.professional.avenirsesr.description'),
+        tags: ['Java 21', 'Spring Boot 3', 'Vue 3', 'PostgreSQL', 'OIDC', 'GitHub Actions'],
+        image: 'assets/images/Avenirs-esr-logo.png',
+        imageWidth: 986,
+        imageHeight: 838,
+        type: ProjectTypeEnum.PROFESSIONAL,
+        featured: true,
+        github: 'https://github.com/avenirs-esr?view_as=public',
+      },
+      {
         name: this.translate.instant('projects.professional.sopraSteria.title'),
+        summary: this.translate.instant('projects.professional.sopraSteria.summary'),
         description: this.translate.instant('projects.professional.sopraSteria.description'),
+        tags: ['Java', 'Spring Boot', 'Angular 15', 'PostgreSQL', 'Jenkins'],
         image: 'assets/images/sopra-steria-logo.png',
+        imageWidth: 225,
+        imageHeight: 225,
+        type: ProjectTypeEnum.PROFESSIONAL,
+        featured: true,
       },
       {
         name: this.translate.instant('projects.professional.millet.title'),
+        summary: this.translate.instant('projects.professional.millet.summary'),
         description: this.translate.instant('projects.professional.millet.description'),
+        tags: ['Windev', 'Windev Mobile', 'Android', 'Arduino'],
         image: 'assets/images/millet-logo.png',
+        imageWidth: 1080,
+        imageHeight: 1080,
+        type: ProjectTypeEnum.PROFESSIONAL,
+        featured: false,
       }
     ];
   }

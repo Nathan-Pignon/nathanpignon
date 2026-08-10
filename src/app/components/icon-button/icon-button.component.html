@@ -1,0 +1,7 @@
+<button
+  class="icon-btn"
+  [type]="type()"
+  [attr.aria-label]="ariaLabel()"
+  [attr.aria-pressed]="pressed() ?? null">
+  <app-icon [name]="icon()"></app-icon>
+</button>

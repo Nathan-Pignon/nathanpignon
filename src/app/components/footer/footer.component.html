@@ -1,0 +1,15 @@
+<footer class="site-footer">
+  <app-container size="lg">
+    <div class="footer-row">
+      <p class="footer-name">Nathan Pignon &middot; {{ year }}</p>
+      <nav class="footer-links" [attr.aria-label]="'footer.linksLabel' | translate">
+        <a href="https://github.com/Nathan-Pignon" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/nathan-pignon-b8b395199/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="#hero" (click)="scrollToTop($event)">
+          {{ 'footer.backToTop' | translate }}
+          <app-icon name="arrow-up"></app-icon>
+        </a>
+      </nav>
+    </div>
+  </app-container>
+</footer>

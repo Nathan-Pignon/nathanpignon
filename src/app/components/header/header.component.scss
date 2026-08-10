@@ -1,65 +1,185 @@
-@import "assets/style/variables.scss";
+@import "assets/style/mixins.scss";
 
-.header-container {
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-nav);
+  background: transparent !important;
+  border-bottom: 1px solid transparent;
+  transition: background-color var(--duration-base) var(--ease),
+              border-color var(--duration-base) var(--ease),
+              box-shadow var(--duration-base) var(--ease);
+}
+
+.site-header--scrolled {
+  background: color-mix(in srgb, var(--color-surface) 92%, transparent);
+  backdrop-filter: saturate(180%) blur(6px);
+  -webkit-backdrop-filter: saturate(180%) blur(6px);
+  border-bottom-color: var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.site-header:not(.site-header--scrolled) {
+  --color-text-primary: #ffffff;
+  --color-text-secondary: rgba(255, 255, 255, .85);
+  --color-border: rgba(255, 255, 255, .32);
+  --color-border-strong: rgba(255, 255, 255, .5);
+  --color-surface-alt: rgba(255, 255, 255, .14);
+}
+
+.header-row {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  position: relative;
-  z-index: 10;
+  gap: var(--space-4);
+  min-height: var(--header-height);
 }
 
-.language-container {
-  display: flex;
-  align-items: center;
+.brand {
+  font-family: var(--font-display);
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-lg);
+  letter-spacing: -.01em;
+  color: var(--color-text-primary);
+
+  &:focus-visible {
+    @include focus-ring;
+  }
 }
 
-.menu-container {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.hamburger-container {
-  font-size: 2rem;
-  cursor: pointer;
+.nav-desktop {
   display: none;
+  align-items: center;
+  gap: var(--space-4);
+
+  @include from(wide) {
+    gap: var(--space-6);
+  }
+
+  @include from(desktop) {
+    display: flex;
+  }
 }
 
-.hamburger-menu-container {
+.nav-link {
+  position: relative;
+  color: var(--color-text-secondary);
+  font-weight: var(--weight-medium);
+  padding-block: var(--space-2);
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--color-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--duration-base) var(--ease);
+  }
+
+  &:hover, &:focus-visible {
+    color: var(--color-text-primary);
+
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+.header-actions {
   display: flex;
   align-items: center;
-  position: relative;
+  gap: var(--space-3);
 }
 
-.mobile-menu {
-  position: absolute;
-  top: 5vh;
-  left: 0;
-  right: 0;
-  width: 40vw;
+.nav-desktop-only {
+  display: none;
+
+  @include from(desktop) {
+    display: inline-flex;
+  }
+}
+
+.lang-toggle {
+  @include tap-target;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: .04em;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  transition: border-color var(--duration-fast) var(--ease), color var(--duration-fast) var(--ease);
+
+  &:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+.menu-toggle {
+  @include from(desktop) {
+    display: none;
+  }
+}
+
+.mobile-drawer {
+  position: fixed;
+  inset: var(--header-height) 0 0;
+  z-index: var(--z-drawer);
+  background: var(--color-surface);
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 1;
+  justify-content: space-between;
+  padding: var(--space-8) var(--gutter);
+  overflow-y: auto;
 }
 
-.mobile-menu button {
+.drawer-nav {
   display: flex;
-  width: auto;
+  flex-direction: column;
+  gap: var(--space-2);
 }
 
-@media (max-width: 768px) {
-  .language-container {
-    display: none;
+.drawer-link {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  padding-block: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+
+  &:hover {
+    color: var(--color-primary);
   }
-  .menu-container {
-    display: none;
+
+  &:focus-visible {
+    @include focus-ring;
   }
-  .hamburger-container {
-    display: block;
-    color: $white-color;
+}
+
+.drawer-lang {
+  @include tap-target;
+  align-self: flex-start;
+  margin-top: var(--space-8);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  padding-inline: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+
+  &:focus-visible {
+    @include focus-ring;
   }
 }
