@@ -62,6 +62,7 @@
       "school": "Scolaire"
     },
     "github": " Voir le repo GitHub",
+    "website": " Voir le site",
     "ios": " Voir sur l'App Store",
     "android": " Voir sur le Play Store",
     "personal": {
@@ -75,6 +76,11 @@
         "title": "UJUE",
         "summary": "Application mobile d'énigme quotidienne, avec notifications locales programmées et une UX/UI mobile pensée pour être moderne et épurée.",
         "description": "🧩 UJUE est une application mobile personnelle construite autour d'un concept simple : une nouvelle énigme à résoudre chaque jour. L'utilisateur peut proposer autant de réponses que nécessaire jusqu'à trouver la solution et consulter les énigmes précédentes depuis un calendrier.\nJ'ai conçu ce projet principalement pour expérimenter Flutter et son écosystème, travailler une UX/UI mobile moderne et épurée, et découvrir la mise en place de notifications locales programmées. Une notification est notamment planifiée chaque jour à midi lorsque l'énigme n'a pas encore été résolue.\n\n🛠️ Technologies et pratiques utilisées :\n✅ Mobile : Développement cross-platform iOS et Android avec Flutter et Dart.\n✅ Architecture & State Management : Gestion des états et événements avec le pattern BLoC (flutter_bloc) et séparation des responsabilités entre services, modèles, écrans et composants réutilisables.\n✅ Back-end : API légère développée avec FastAPI et Python, structurée en couches Router → Service → CRUD → Model.\n✅ API & Données : Communication HTTP avec Dio côté Flutter et validation/sérialisation des données côté API avec des schémas Pydantic dédiés.\n✅ Base de données : Persistance avec SQLAlchemy et modélisation des énigmes et de leurs traductions.\n✅ Notifications : Programmation de notifications locales avec flutter_local_notifications et gestion des fuseaux horaires.\n✅ UX/UI : Conception d'une interface moderne et épurée avec animations, feedbacks visuels et animations de victoire.\n✅ Navigation & i18n : Navigation déclarative avec GoRouter et internationalisation français/anglais via les outils i18n de Flutter.\n✅ Persistance locale : Gestion de données et préférences locales avec SharedPreferences."
+      },
+      "prefood": {
+        "title": "Prefood",
+        "summary": "SaaS de carte de restaurant digitale accessible par QR code, avec traduction automatique en 4 langues et mise à jour en temps réel, conçu et développé seul.",
+        "description": "🍽️ Prefood est une application SaaS permettant aux restaurateurs de transformer leur carte papier en carte digitale accessible par QR code. Chaque établissement dispose d'un espace d'administration pour modifier prix, plats, catégories et disponibilité en quelques secondes, avec traduction automatique des plats en anglais, espagnol, allemand et italien pour les clients étrangers.\n\n🛠️ Technologies et pratiques utilisées :\n✅ Front-end : Next.js 16 (App Router) et React 19, interface construite avec Tailwind CSS 4 et des composants Base UI/shadcn.\n✅ Back-end : API routes et server actions Next.js, avec l'ORM Drizzle pour l'accès aux données.\n✅ Base de données & Auth : PostgreSQL hébergé sur Supabase, authentification et stockage des images (logos, photos de couverture) via Supabase.\n✅ Traduction automatique : Intégration de l'API DeepL pour traduire automatiquement les cartes en 4 langues.\n✅ Fonctionnalités : Génération de QR codes, réorganisation des catégories et plats par glisser-déposer (dnd-kit), compression d'images côté client, thème clair/sombre.\n✅ Sécurité : Protection anti-bot des formulaires avec hCaptcha et validation des données avec Zod."
       }
     },
     "professional": {

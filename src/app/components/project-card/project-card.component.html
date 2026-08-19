@@ -28,9 +28,12 @@
         <app-badge *ngIf="featured()" tone="accent">{{ 'projects.featuredLabel' | translate }}</app-badge>
       </div>
 
-      <div class="project-card-links" *ngIf="project().github || project().ios || project().android">
+      <div class="project-card-links" *ngIf="project().github || project().website || project().ios || project().android">
         <app-button *ngIf="project().github as githubUrl" variant="ghost" size="sm" [href]="githubUrl" target="_blank">
           <app-icon name="external-link"></app-icon>{{ 'projects.github' | translate }}
+        </app-button>
+        <app-button *ngIf="project().website as websiteUrl" variant="ghost" size="sm" [href]="websiteUrl" target="_blank">
+          <app-icon name="external-link"></app-icon>{{ 'projects.website' | translate }}
         </app-button>
         <app-button *ngIf="project().ios as iosUrl" variant="ghost" size="sm" [href]="iosUrl" target="_blank">
           <app-icon name="external-link"></app-icon>{{ 'projects.ios' | translate }}

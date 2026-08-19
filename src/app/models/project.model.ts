@@ -11,6 +11,7 @@ export interface ProjectModel {
   type: ProjectTypeEnum;
   featured: boolean;
   github?: string;
+  website?: string;
   ios?: string;
   android?: string;
 }

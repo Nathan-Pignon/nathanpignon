@@ -55,6 +55,18 @@ export class ProjectsService {
         type: ProjectTypeEnum.PERSONAL,
         featured: false,
         ios: 'https://apps.apple.com/us/app/ujue/id6741479554?platform=iphone',
+      },
+      {
+        name: this.translate.instant('projects.personal.prefood.title'),
+        summary: this.translate.instant('projects.personal.prefood.summary'),
+        description: this.translate.instant('projects.personal.prefood.description'),
+        tags: ['Next.js', 'TypeScript', 'Drizzle ORM', 'Supabase', 'PostgreSQL', 'Tailwind CSS'],
+        image: 'assets/images/prefood-logo.svg',
+        imageWidth: 512,
+        imageHeight: 512,
+        type: ProjectTypeEnum.PERSONAL,
+        featured: false,
+        website: 'https://prefood.fr',
       }
     ];
   }

@@ -62,6 +62,7 @@
       "school": "School"
     },
     "github": " View the GitHub repo",
+    "website": " View the website",
     "ios": " View on the App Store",
     "android": " View on the Play Store",
     "personal": {
@@ -75,6 +76,11 @@
         "title": "UJUE",
         "summary": "A daily-riddle mobile app with scheduled local notifications and a clean, modern mobile UX/UI.",
         "description": "🧩 UJUE is a personal mobile application built around a simple concept: a new riddle to solve every day. Users can submit as many answers as needed until they find the correct solution and browse previous riddles through a calendar.\nI created this project mainly to experiment with Flutter and its ecosystem, design a clean and modern mobile UX/UI, and explore scheduled local notifications. A notification is notably scheduled every day at noon when the daily riddle has not yet been solved.\n\n🛠️ Technologies and practices used:\n✅ Mobile: Cross-platform iOS and Android development using Flutter and Dart.\n✅ Architecture & State Management: Event and state management using the BLoC pattern (flutter_bloc), with clear separation between services, models, screens and reusable components.\n✅ Back-end: Lightweight API developed with FastAPI and Python, structured into Router → Service → CRUD → Model layers.\n✅ API & Data: HTTP communication using Dio on the Flutter side and data validation/serialization through dedicated Pydantic schemas on the API side.\n✅ Database: Data persistence using SQLAlchemy with dedicated models for riddles and their translations.\n✅ Notifications: Scheduled local notifications using flutter_local_notifications with timezone management.\n✅ UX/UI: Design of a clean and modern interface featuring animations, visual feedback and victory effects.\n✅ Navigation & i18n: Declarative navigation using GoRouter and French/English internationalization through Flutter's i18n tooling.\n✅ Local persistence: Local data and preference management using SharedPreferences."
+      },
+      "prefood": {
+        "title": "Prefood",
+        "summary": "A SaaS digital restaurant menu accessible via QR code, with automatic translation into 4 languages and real-time updates, designed and built solo.",
+        "description": "🍽️ Prefood is a SaaS application that lets restaurant owners turn their paper menu into a digital menu accessible via QR code. Each establishment has an admin space to update prices, dishes, categories and availability in seconds, with automatic translation of dishes into English, Spanish, German and Italian for foreign customers.\n\n🛠️ Technologies and practices used:\n✅ Front-end: Next.js 16 (App Router) and React 19, interface built with Tailwind CSS 4 and Base UI/shadcn components.\n✅ Back-end: Next.js API routes and server actions, with the Drizzle ORM for data access.\n✅ Database & Auth: PostgreSQL hosted on Supabase, authentication and image storage (logos, cover photos) via Supabase.\n✅ Automatic translation: Integration of the DeepL API to automatically translate menus into 4 languages.\n✅ Features: QR code generation, drag-and-drop reordering of categories and dishes (dnd-kit), client-side image compression, light/dark theme.\n✅ Security: Anti-bot form protection with hCaptcha and data validation with Zod."
       }
     },
     "professional": {
